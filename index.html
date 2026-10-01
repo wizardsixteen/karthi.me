@@ -856,6 +856,12 @@
       .side .rise-item.rise-in {
         transform: translateY(0);
       }
+      .svc > div.rise-item {
+        transform: translateY(38px);
+      }
+      .svc > div.rise-item.rise-in {
+        transform: translateY(0);
+      }
       .row.rise-item {
         transition:
           transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -1756,12 +1762,18 @@
 
         // 2. Prepare Content Area Elements
         var targetSelector =
-          "main .lbl, main .chip, main .big, main .txt, main .svc-divider, main .svc > div, main .row, main .cols > div, main .grp, main .tags, main .cta, main .acts";
+          "main .lbl, main .chip, main .big, main .txt, main .svc-divider, main .svc, main .row, main .cols > div, main .grp, main .tags, main .cta, main .acts";
         var contentItems = document.querySelectorAll(targetSelector);
         contentItems.forEach(function (el) {
-          if (!el.classList.contains("tags")) {
+          if (!el.classList.contains("tags") && !el.classList.contains("svc")) {
             el.classList.add("rise-item");
           }
+        });
+
+        // Prepare individual service cards in Services section
+        var svcCards = document.querySelectorAll("main .svc > div");
+        svcCards.forEach(function (card) {
+          card.classList.add("rise-item");
         });
 
         // Prepare individual tag pills in Brands and Skills sections
@@ -1782,6 +1794,9 @@
             contentItems.forEach(function (el) {
               el.classList.add("rise-in");
             });
+            svcCards.forEach(function (card) {
+              card.classList.add("rise-in");
+            });
             tagSpans.forEach(function (span) {
               span.classList.add("rise-in");
             });
@@ -1796,10 +1811,20 @@
                   var el = entry.target;
                   obs.unobserve(el);
 
-                  var delay = 160 + Math.min(batchIndex * 65, 260);
+                  var delay = 160 + batchIndex * 65;
                   batchIndex++;
 
-                  if (el.classList.contains("tags")) {
+                  if (el.classList.contains("svc")) {
+                    var cards = el.querySelectorAll(":scope > div");
+                    cards.forEach(function (card, cardIdx) {
+                      setTimeout(
+                        function () {
+                          card.classList.add("rise-in");
+                        },
+                        delay + cardIdx * 60,
+                      );
+                    });
+                  } else if (el.classList.contains("tags")) {
                     el.classList.add("rise-in");
                     var tags = el.querySelectorAll("span");
                     tags.forEach(function (tag, tagIdx) {
@@ -1840,6 +1865,11 @@
                 if (!el.classList.contains("rise-in")) {
                   el.classList.add("rise-in");
                   observer.unobserve(el);
+                }
+              });
+              svcCards.forEach(function (card) {
+                if (!card.classList.contains("rise-in")) {
+                  card.classList.add("rise-in");
                 }
               });
               tagSpans.forEach(function (tag) {
