@@ -1,0 +1,2149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Karthik Narayanan — UI/UX, 3D, Code & XR.</title>
+    <meta
+      name="description"
+      content="Portfolio of Karthik Narayanan — Creative Officer, UI/UX Designer, 3D Artist and Technologist with 7+ years of experience turning ideas into intuitive products and immersive 3D/XR worlds."
+    />
+    <meta name="author" content="Karthik Narayanan" />
+    <meta
+      name="keywords"
+      content="Karthik Narayanan, UI/UX Designer, 3D Artist, Creative Officer, Web Development, XR, Blender, Three.js, React, Riglabs, Zilicon, Portfolio"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://karthi.me/" />
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="assets/favicon/site.webmanifest" />
+    <meta name="theme-color" content="#0b0b0c" />
+    <meta name="msapplication-TileColor" content="#0b0b0c" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://karthi.me/" />
+    <meta
+      property="og:title"
+      content="Karthik Narayanan — UI/UX, 3D, Code & XR."
+    />
+    <meta
+      property="og:description"
+      content="Creative Officer specializing in UI/UX design, 3D modeling, interactive web and XR. From code to pixels to polygons to 3D worlds."
+    />
+    <meta
+      property="og:image"
+      content="https://karthi.me/assets/meta/og-image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta
+      property="og:image:alt"
+      content="Karthik Narayanan — UI/UX, 3D, Code & XR."
+    />
+    <meta property="og:site_name" content="Karthik Narayanan" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://karthi.me/" />
+    <meta
+      name="twitter:title"
+      content="Karthik Narayanan — UI/UX, 3D, Code & XR."
+    />
+    <meta
+      name="twitter:description"
+      content="Creative Officer specializing in UI/UX design, 3D modeling, interactive web and XR. From code to pixels to polygons to 3D worlds."
+    />
+    <meta
+      name="twitter:image"
+      content="https://karthi.me/assets/meta/og-image.png"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Karthik Narayanan — UI/UX, 3D, Code & XR."
+    />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Karthik Narayanan",
+        "url": "https://karthi.me/",
+        "jobTitle": "Creative Officer",
+        "sameAs": [
+          "https://www.linkedin.com/in/wizardsixteen",
+          "https://riglabs.co",
+          "http://wa.me/917306728337"
+        ],
+        "knowsAbout": [
+          "UI/UX Design",
+          "3D Modeling",
+          "Web Development",
+          "XR & Augmented Reality",
+          "Creative Direction",
+          "Front-end Engineering"
+        ]
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Instrument+Serif:ital@1&family=DM+Sans:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0b0b0c;
+        --panel: #101012;
+        --ink: #f2f2f2;
+        --mute: #b5b5b5;
+        --line: #26262a;
+        --accent: #fe3b15;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      html {
+        scroll-padding-top: env(safe-area-inset-top, 0px);
+        scroll-behavior: auto;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font:
+          400 1rem/1.65 "DM Sans",
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      a:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 4px;
+      }
+      .wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 100vh;
+      }
+      @media (min-width: 900px) {
+        .wrap {
+          grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+        }
+      }
+      .side {
+        background: var(--bg);
+        padding: 1.5rem clamp(1.25rem, 4vw, 3rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 3rem;
+        border-bottom: 1px solid var(--line);
+      }
+      @media (min-width: 900px) {
+        .side {
+          position: sticky;
+          top: 0;
+          height: 100vh;
+          border-bottom: 0;
+          border-right: 1px solid var(--line);
+          padding-bottom: 2.5rem;
+        }
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        font-size: 0.8rem;
+        color: var(--mute);
+      }
+      nav a {
+        transition: color 0.2s;
+      }
+      nav a.rise-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1),
+          opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1),
+          color 0.2s;
+        will-change: transform, opacity;
+      }
+      nav a.rise-item.rise-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      nav a:hover {
+        color: var(--ink);
+      }
+      h1 {
+        margin: 0;
+        font:
+          900 clamp(4rem, 19vw, 9rem)/0.82 "Big Shoulders Display",
+          "Arial Narrow",
+          Impact,
+          sans-serif;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+      h1 span {
+        display: block;
+        overflow: hidden;
+      }
+      @media (min-width: 900px) {
+        h1 {
+          font-size: clamp(3.5rem, 8.5vw, 8rem);
+        }
+      }
+      h1 span b {
+        display: block;
+        font-weight: 900;
+        animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+      }
+      @keyframes rise {
+        from {
+          transform: translateY(105%);
+        }
+        to {
+          transform: none;
+        }
+      }
+      .role {
+        font:
+          italic 1.5rem/1.25 "Instrument Serif",
+          Georgia,
+          serif;
+        font-style: italic;
+        margin: 1.25rem 0 0;
+        color: var(--mute);
+      }
+      .meta {
+        font-size: 0.8rem;
+        color: var(--mute);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      main {
+        position: relative;
+        padding: clamp(1.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 4rem) 1rem;
+      }
+      main > section {
+        position: relative;
+        z-index: 1;
+      }
+      .horizon-canvas {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: clamp(14rem, 28vh, 22rem);
+        pointer-events: none;
+        z-index: 0;
+        mask-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 1) 20%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        -webkit-mask-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 1) 20%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .horizon-canvas.on {
+        opacity: 1;
+      }
+      section {
+        margin-bottom: clamp(3.5rem, 8vw, 6rem);
+      }
+      #about,
+      #experience,
+      #services,
+      #awards,
+      #skills,
+      #work,
+      #contact {
+        scroll-margin-top: 80px;
+      }
+      .lbl {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 0.75rem;
+        color: var(--mute);
+        margin: 0 0 1.75rem;
+      }
+      .lbl::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--line);
+      }
+      .big {
+        font:
+          italic clamp(2rem, 4.5vw, 3.25rem)/1.1 "Instrument Serif",
+          Georgia,
+          serif;
+        margin: 0 0 1.25rem;
+      }
+      .txt {
+        color: var(--mute);
+        max-width: 46ch;
+        margin: 0;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 0.25rem 1.5rem;
+        align-items: baseline;
+        padding: 1.35rem 0;
+        border-top: 1px solid var(--line);
+        transition: padding-left 0.25s;
+      }
+      .row:last-of-type {
+        border-bottom: 1px solid var(--line);
+      }
+      a.row:hover {
+        padding-left: 0.75rem;
+      }
+      .row h3 {
+        margin: 0;
+        font:
+          800 clamp(1.8rem, 3.6vw, 2.6rem)/1 "Big Shoulders Display",
+          "Arial Narrow",
+          Impact,
+          sans-serif;
+        text-transform: uppercase;
+      }
+      .row p {
+        margin: 0.35rem 0 0;
+        color: var(--mute);
+        font-size: 0.95rem;
+        max-width: 44ch;
+        grid-column: 1;
+      }
+      .row i {
+        font-style: normal;
+        color: var(--mute);
+        font-size: 0.8rem;
+        grid-row: 1;
+        grid-column: 2;
+      }
+      .sm {
+        font-size: clamp(1.4rem, 2.6vw, 1.9rem) !important;
+      }
+      .cols {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+      }
+      .cols h4 {
+        margin: 0 0 0.25rem;
+        font-weight: 500;
+      }
+      .cols p {
+        margin: 0 0 1.25rem;
+        color: var(--mute);
+        font-size: 0.92rem;
+      }
+      .grp {
+        font-size: 0.75rem;
+        color: var(--mute);
+        margin: 1.5rem 0 0.6rem;
+      }
+      @media (min-width: 700px) {
+        .cols {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .btn {
+        display: inline-block;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        border: 1px solid var(--ink);
+        border-radius: 999px;
+        padding: 0.7rem 1.4rem;
+        font-weight: 500;
+        background: transparent;
+        color: var(--ink);
+        transition:
+          color 320ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          border-color 320ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .btn::before {
+        content: "";
+        position: absolute;
+        left: var(--x, 50%);
+        top: var(--y, 50%);
+        width: 380px;
+        height: 380px;
+        margin-left: -190px;
+        margin-top: -190px;
+        border-radius: 50%;
+        background: var(--ink);
+        z-index: -2;
+        pointer-events: none;
+        transform: scale(0);
+        transition: transform 340ms cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: transform;
+      }
+      .btn:hover::before {
+        transform: scale(1);
+      }
+      .btn:hover {
+        color: var(--bg);
+      }
+      .btn.fill {
+        background: var(--ink);
+        color: var(--bg);
+      }
+      .btn.fill::before {
+        background: var(--bg);
+      }
+      .btn.fill:hover {
+        color: var(--ink);
+      }
+      .btn-click-ripple {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        margin-top: -12px;
+        margin-left: -12px;
+        border-radius: 50%;
+        background: rgba(254, 59, 21, 0.45);
+        pointer-events: none;
+        z-index: -1;
+        transform: scale(0);
+        animation: btn-ripple-expand 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)
+          forwards;
+      }
+      @keyframes btn-ripple-expand {
+        0% {
+          transform: scale(0);
+          opacity: 0.9;
+        }
+        100% {
+          transform: scale(16);
+          opacity: 0;
+        }
+      }
+      .side {
+        overflow: hidden;
+      }
+      @media (max-width: 899px) {
+        .side {
+          position: relative;
+        }
+      }
+      .side > * {
+        position: relative;
+        z-index: 1;
+      }
+      .deco {
+        position: absolute !important;
+        z-index: 0 !important;
+        left: auto;
+        right: 2rem;
+        top: 25%;
+        width: 16rem;
+        color: rgba(255, 255, 255, 0.25);
+        pointer-events: none;
+        will-change: left, top, width;
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .deco.on {
+        opacity: 1;
+      }
+      .svc-divider {
+        height: 1px;
+        background: var(--line);
+        margin: 0;
+      }
+      .svc {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .svc > div {
+        padding: 1.5rem 0;
+        border-bottom: 1px solid var(--line);
+        display: grid;
+        grid-template-columns: 3rem 1fr;
+        gap: 1rem;
+        align-items: start;
+      }
+      .svc svg {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: none;
+        stroke: var(--ink);
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .svc h3 {
+        margin: 0;
+        font:
+          800 1.5rem/1 "Big Shoulders Display",
+          "Arial Narrow",
+          Impact,
+          sans-serif;
+        text-transform: uppercase;
+      }
+      .svc p {
+        margin: 0.3rem 0 0;
+        color: var(--mute);
+        font-size: 0.95rem;
+      }
+      @media (min-width: 700px) {
+        .svc {
+          grid-template-columns: 1fr 1fr;
+          column-gap: 2.5rem;
+        }
+      }
+      .rot {
+        overflow: hidden;
+        padding-bottom: 0.12em;
+      }
+      .rot span {
+        display: inline-block;
+        transition:
+          transform 0.45s cubic-bezier(0.22, 1.4, 0.36, 1),
+          opacity 0.35s ease-out;
+      }
+      .rot span.out {
+        transform: translateY(-110%) scale(0.92);
+        opacity: 0;
+        transition:
+          transform 0.3s cubic-bezier(0.55, 0, 1, 0.45),
+          opacity 0.25s ease-in;
+      }
+      .rot span.pre {
+        transform: translateY(110%) scale(0.92);
+        opacity: 0;
+        transition: none;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(254, 59, 21, 0.1);
+        border: 1px solid rgba(254, 59, 21, 0.5);
+        color: var(--accent);
+        border-radius: 999px;
+        padding: 0.35rem 1rem 0.35rem 0.85rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        margin: 0 0 1.5rem;
+      }
+      .chip::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 0.25rem rgba(254, 59, 21, 0.22);
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+        margin-top: 2.5rem;
+      }
+      .stats div {
+        background: var(--bg);
+        padding: 1.1rem 1.25rem;
+      }
+      .stats b {
+        display: block;
+        font:
+          900 clamp(2.4rem, 5vw, 3.4rem)/1 "Big Shoulders Display",
+          "Arial Narrow",
+          Impact,
+          sans-serif;
+      }
+      .stats span {
+        color: var(--mute);
+        font-size: 0.85rem;
+      }
+      .stats div:last-child:nth-child(odd) {
+        grid-column: 1/-1;
+      }
+      @media (min-width: 700px) {
+        .stats {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .stats div:last-child:nth-child(odd) {
+          grid-column: auto;
+        }
+      }
+      @media (hover: hover) and (pointer: fine) {
+        html.cc,
+        html.cc a,
+        html.cc .btn {
+          cursor: none;
+        }
+      }
+      .cur-dot,
+      .cur-ring {
+        position: fixed;
+        left: 0;
+        top: 0;
+        pointer-events: none;
+        z-index: 9999;
+        border-radius: 50%;
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+      .cur-dot {
+        width: 8px;
+        height: 8px;
+        margin: -4px 0 0 -4px;
+        background: var(--accent);
+      }
+      .cur-ring {
+        width: 34px;
+        height: 34px;
+        margin: -17px 0 0 -17px;
+        border: 1.5px solid var(--accent);
+        transition:
+          opacity 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          width 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          height 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          margin 300ms cubic-bezier(0.2, 0.8, 0.2, 1),
+          background 300ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .cur-ring.h {
+        width: 60px;
+        height: 60px;
+        margin: -30px 0 0 -30px;
+        background: rgba(254, 59, 21, 0.15);
+      }
+      .cur-ring.d {
+        width: 22px;
+        height: 22px;
+        margin: -11px 0 0 -11px;
+      }
+      .cur-dot.on,
+      .cur-ring.on {
+        opacity: 1;
+      }
+      .acts {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.75rem;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .tags span {
+        border: 1px solid var(--line);
+        padding: 0.3rem 0.85rem;
+        font-size: 0.82rem;
+        color: var(--mute);
+      }
+      .cta {
+        font:
+          900 clamp(3.5rem, 10vw, 7rem)/0.88 "Big Shoulders Display",
+          "Arial Narrow",
+          Impact,
+          sans-serif;
+        text-transform: uppercase;
+        margin: 0;
+      }
+      .cta em {
+        display: block;
+        font:
+          italic 400 1em/1 "Instrument Serif",
+          Georgia,
+          serif;
+        text-transform: none;
+        color: var(--mute);
+      }
+      .link {
+        display: inline-block;
+        margin-top: 1.75rem;
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 0.2rem;
+      }
+      .promise {
+        font-size: 0.95rem;
+        color: var(--ink);
+        margin: 0.75rem 0 0;
+        max-width: 36ch;
+        line-height: 1.5;
+      }
+      .side-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-top: 1.75rem;
+      }
+      .side-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        margin-bottom: 0.75rem;
+      }
+      .side-stats > div {
+        padding: 0.9rem 1rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .side-stats > div:last-child {
+        border-right: none;
+      }
+      .side-stats b {
+        display: block;
+        font:
+          900 clamp(1.8rem, 4vw, 2.6rem)/1 "Big Shoulders Display",
+          "Arial Narrow",
+          Impact,
+          sans-serif;
+      }
+      .side-stats span {
+        color: var(--mute);
+        font-size: 0.75rem;
+        line-height: 1.3;
+        display: block;
+        margin-top: 0.2rem;
+      }
+      .brands {
+        font-size: 0.78rem;
+        color: var(--mute);
+        margin: 0;
+        line-height: 1.5;
+      }
+      .side::before,
+      .side::after {
+        content: "";
+        position: absolute;
+        z-index: 0 !important;
+        width: 150%;
+        height: 150%;
+        top: -25%;
+        left: -25%;
+        pointer-events: none;
+      }
+      .side::before {
+        background:
+          radial-gradient(
+            ellipse 70% 60% at 50% 50%,
+            rgba(254, 59, 21, 0.4) 0%,
+            transparent 70%
+          ),
+          radial-gradient(
+            ellipse 50% 40% at 30% 50%,
+            rgba(180, 30, 10, 0.3) 0%,
+            transparent 60%
+          );
+        animation: aurora1 20s ease-in-out infinite;
+      }
+      .side::after {
+        background:
+          radial-gradient(
+            ellipse 60% 50% at 50% 50%,
+            rgba(200, 40, 15, 0.35) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 40% 35% at 60% 50%,
+            rgba(120, 15, 5, 0.3) 0%,
+            transparent 50%
+          );
+        animation: aurora2 25s ease-in-out infinite;
+      }
+      @keyframes aurora1 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg) scale(1);
+        }
+        16% {
+          transform: translate(25%, -20%) rotate(8deg) scale(1.1);
+        }
+        33% {
+          transform: translate(-15%, 25%) rotate(-5deg) scale(1.05);
+        }
+        50% {
+          transform: translate(20%, 15%) rotate(10deg) scale(1.15);
+        }
+        66% {
+          transform: translate(-25%, -10%) rotate(-8deg) scale(1.05);
+        }
+        83% {
+          transform: translate(10%, -25%) rotate(5deg) scale(1.1);
+        }
+      }
+      @keyframes aurora2 {
+        0%,
+        100% {
+          transform: translate(0, 0) rotate(0deg) scale(1.05);
+        }
+        16% {
+          transform: translate(-20%, 25%) rotate(-10deg) scale(1.1);
+        }
+        33% {
+          transform: translate(25%, 10%) rotate(6deg) scale(1);
+        }
+        50% {
+          transform: translate(-10%, -20%) rotate(-6deg) scale(1.15);
+        }
+        66% {
+          transform: translate(15%, 20%) rotate(8deg) scale(1.05);
+        }
+        83% {
+          transform: translate(-25%, -15%) rotate(-5deg) scale(1.1);
+        }
+      }
+      .rise-item {
+        opacity: 0;
+        transform: translateY(60px);
+        transition:
+          transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+          opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: transform, opacity;
+      }
+      .rise-item.rise-in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .side .rise-item {
+        transform: translateY(32px);
+      }
+      .side .rise-item.rise-in {
+        transform: translateY(0);
+      }
+      .row.rise-item {
+        transition:
+          transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+          opacity 0.65s cubic-bezier(0.2, 0.8, 0.2, 1),
+          padding-left 0.25s;
+      }
+      .tags span.rise-item {
+        display: inline-block;
+        transform: translateY(28px);
+        opacity: 0;
+        transition:
+          transform 0.85s cubic-bezier(0.2, 0.8, 0.2, 1),
+          opacity 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+        will-change: transform, opacity;
+      }
+      .tags span.rise-item.rise-in {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        h1 span b {
+          animation: none;
+        }
+        .row {
+          transition: none;
+        }
+        .side::before,
+        .side::after {
+          animation: none;
+        }
+        .rise-item {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+        .btn::before {
+          transition: none !important;
+        }
+        .btn-click-ripple {
+          display: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <aside class="side">
+        <svg
+          class="deco"
+          viewBox="0 0 48 48"
+          fill="none"
+          stroke="currentColor"
+          stroke-width=".12"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path
+            id="mp"
+            d="M24 5 41 14.5v19L24 43 7 33.5v-19zM7 14.5 24 24l17-9.5M24 24v19M15.5 9.7l17 9.5M32.5 9.7l-17 9.5M7 24l17 9.5L41 24M15.5 38.2V19M32.5 38.2V19"
+          />
+        </svg>
+
+        <nav id="side-nav">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#experience">Experience</a>
+          <a href="#awards">Awards</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <div id="side-content">
+          <h1 aria-label="Karthik Narayanan">
+            <span><b>Karthik</b></span
+            ><span><b style="animation-delay: 0.12s">Narayanan</b></span>
+          </h1>
+          <p class="role">Creative Officer. UI/UX, 3D, Code & XR.</p>
+          <p class="promise">
+            From code to pixels to polygons to 3D worlds.
+            <br />
+            I can turn your ideas into reality.
+          </p>
+          <div class="side-ctas">
+            <a class="btn fill" href="http://wa.me/917306728337">Hire me ↗</a>
+            <a class="btn" href="#services">See services</a>
+          </div>
+        </div>
+        <div id="side-bottom">
+          <div class="side-stats">
+            <div><b>7+</b><span>years in design &amp; development</span></div>
+            <div><b>100+</b><span>events hosted</span></div>
+            <div><b>8,000+</b><span>students trained</span></div>
+          </div>
+          <p class="brands">
+            Worked with Amazon, ASAP Kerala, Figma, GDG, ICTAK, IEEE, K-DISC,
+            Meta, Riglabs Collective and Zilicon Technologies.
+          </p>
+        </div>
+      </aside>
+
+      <main>
+        <section id="about">
+          <p class="lbl">About</p>
+          <p class="chip">Visual designer by heart.</p>
+          <div style="display: flex; flex-direction: row; gap: 1.5rem">
+            <p class="big" style="width: 100%; max-width: 40%">
+              "I make products people understand at a glance and enjoy using."
+            </p>
+            <p class="txt" style="width: 100%; max-width: 40%">
+              UI/UX designer and 3D artist with 7+ years of experience in
+              product design, animation, web development, and immersive
+              technologies. As Creative Officer at Zilicon Technologies and
+              trainer at Riglabs Collective, I create interactive digital
+              experiences and empower learners through hands-on technology
+              education.
+            </p>
+          </div>
+        </section>
+        <section id="services">
+          <p class="lbl">Services</p>
+          <div class="svc-divider"></div>
+          <div class="svc">
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="14" y="14" width="20" height="20" rx="3" />
+                <rect x="20" y="20" width="8" height="8" />
+                <path
+                  d="M19 6v8M29 6v8M19 34v8M29 34v8M6 19h8M6 29h8M34 19h8M34 29h8"
+                />
+              </svg>
+              <div>
+                <h3>Technologist</h3>
+                <p>
+                  Understands technology and picks the right tools to turn it
+                  into working products.
+                </p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path
+                  d="M24 5 41 14.5v19L24 43 7 33.5v-19zM7 14.5 24 24l17-9.5M24 24v19"
+                />
+              </svg>
+              <div>
+                <h3>3D</h3>
+                <p>Models and scenes for products, brands and XR.</p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M6 36C14 36 14 12 24 12s10 24 18 24" />
+                <circle cx="6" cy="36" r="2.5" />
+                <circle cx="42" cy="36" r="2.5" />
+                <circle cx="24" cy="12" r="2.5" />
+              </svg>
+              <div>
+                <h3>Animation</h3>
+                <p>Motion graphics and 3D animation that explain and engage.</p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="7" y="7" width="22" height="22" rx="4" />
+                <circle cx="30" cy="30" r="12" />
+              </svg>
+              <div>
+                <h3>Brand assets</h3>
+                <p>
+                  Logos, style guides, social and ad creatives that stay
+                  consistent.
+                </p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="10" width="36" height="28" rx="4" />
+                <path d="M20 19v10l9-5z" />
+              </svg>
+              <div>
+                <h3>Media assets</h3>
+                <p>
+                  Video edits, graphics and visuals for campaigns and courses.
+                </p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="7" y="7" width="14" height="14" rx="2" />
+                <circle cx="33" cy="14" r="7" />
+                <rect x="7" y="27" width="14" height="14" rx="7" />
+                <path d="M33 27l7 14H26z" />
+              </svg>
+              <div>
+                <h3>Design system</h3>
+                <p>
+                  Reusable components and tokens so teams ship consistent UI
+                  faster.
+                </p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="8" width="36" height="32" rx="4" />
+                <path d="M6 16h36M12 22h12v12H12zM29 24h8M29 30h8" />
+              </svg>
+              <div>
+                <h3>Product page</h3>
+                <p>
+                  Clear, responsive pages that explain a product and prompt
+                  action.
+                </p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="21" cy="21" r="12" />
+                <path d="M30 30l11 11" />
+              </svg>
+              <div>
+                <h3>Critical thinking</h3>
+                <p>Sharp questions and testing that find the real problem.</p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path
+                  d="M24 5a12 12 0 0 0-6 22c1 1 1 3 1 4h10c0-1 0-3 1-4a12 12 0 0 0-6-22zM19 37h10M21 42h6"
+                />
+              </svg>
+              <div>
+                <h3>Creative thinking</h3>
+                <p>Fresh concepts and directions to choose from.</p>
+              </div>
+            </div>
+            <div>
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M7 9h24v16H18l-6 6v-6H7zM35 19h6v14h-4v6l-6-6H21v-5" />
+              </svg>
+              <div>
+                <h3>Consultation</h3>
+                <p>Reviews, workshops and advice on design, XR and brand.</p>
+              </div>
+            </div>
+          </div>
+          <div class="acts">
+            <a class="btn" href="http://wa.me/917306728337">Hire me ↗</a>
+          </div>
+        </section>
+
+        <section>
+          <p class="lbl">Brands &amp; communities</p>
+          <div class="tags">
+            <span>Riglabs Collective</span><span>Zilicon Technologies</span
+            ><span>Google Developers Group</span><span>K-DISC</span
+            ><span>IEEE</span><span>XtrudAR Community</span><span>Meta</span>
+          </div>
+        </section>
+
+        <section id="experience">
+          <p class="lbl">Experience</p>
+          <div class="row">
+            <h3 class="sm">Creative Officer</h3>
+            <i>Sep 2019 - Present</i>
+            <p>
+              Riglabs Collective. Leads cross-platform development, UX research
+              and product UI for a learning platform that profiles students'
+              achievements. Also Technical Skills Trainer.
+            </p>
+          </div>
+          <div class="row">
+            <h3 class="sm">Creative Officer</h3>
+            <i>May 2019 - Present</i>
+            <p>
+              Zilicon Technologies Pvt. Ltd. Branding, style guides, social
+              media, advertising and client projects, alongside robotics, XR and
+              embedded-systems products.
+            </p>
+          </div>
+          <div class="row">
+            <h3 class="sm">Designer, volunteer</h3>
+            <i>Dec 2022 - Present</i>
+            <p>Google Developers Group.</p>
+          </div>
+        </section>
+
+        <section id="work">
+          <p class="lbl">Work</p>
+          <a class="row" href="https://riglabs.co"
+            ><h3>riglabs.co</h3>
+            <i>Website ↗</i>
+            <p>
+              Public site for Riglabs Collective. Next.js, React, TypeScript and
+              Tailwind CSS v4 in a Turborepo monorepo, with a shared icon
+              component system and design tokens. Firebase Hosting, Cloudflare
+              DNS.
+            </p></a
+          >
+          <div class="row">
+            <h3>Courses &amp; syllabi</h3>
+            <i>Content</i>
+            <p>
+              Course structure and syllabus production across the Riglabs
+              domains.
+            </p>
+          </div>
+          <div class="row">
+            <h3>Training</h3>
+            <i>Facilitation</i>
+            <p>Sessions and mentoring for students on design, motion and XR.</p>
+          </div>
+        </section>
+
+        <section id="awards">
+          <p class="lbl">Honors &amp; awards</p>
+          <div class="row">
+            <h3 class="sm">Meta hackathons</h3>
+            <i>Host</i>
+            <p>
+              Hosted hackathons on behalf of Meta, making $23,000+ possible
+              among students.
+            </p>
+          </div>
+          <div class="row">
+            <h3 class="sm">Young Innovators Programme 5.0</h3>
+            <i>Sep 2023</i>
+            <p>
+              Kerala Development &amp; Innovation Strategic Council. Delivered a
+              session on digital creative art forms, XR and game design.
+            </p>
+          </div>
+          <div class="row">
+            <h3 class="sm">Augmented Reality Mentoring</h3>
+            <i>Nov 2022</i>
+            <p>
+              IEEE AKCSSC. Mentored students on AR at Mar Baselios Christian
+              College of Engineering, Peermade.
+            </p>
+          </div>
+          <div class="row">
+            <h3 class="sm">Spark AR HackARthon 2022</h3>
+            <i>Mar 2022</i>
+            <p>
+              XtrudAR Community. AR effects for Messenger and Instagram in Spark
+              AR Studio, a warm-up for Meta Spark Playtime.
+            </p>
+          </div>
+          <div class="row">
+            <h3 class="sm">AR: Our Immersive Future</h3>
+            <i>Apr 2020</i>
+            <p>
+              IEEE Cell, College of Engineering Pathanapuram. Organised and
+              mentored a 3-hour online webinar.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <p class="lbl">Education &amp; certifications</p>
+          <div class="cols">
+            <div>
+              <h4>BTech, Mechanical Engineering</h4>
+              <p>Sarabhai Institute of Science and Technology, 2016 – 2020</p>
+            </div>
+            <div>
+              <h4>Mentoring</h4>
+              <p>
+                Kerala Development and Innovation Strategic Council, Sep 2023
+              </p>
+            </div>
+            <div>
+              <h4>Design For Metaverse</h4>
+              <p>ProApp - Learn Design, Apr 2022</p>
+            </div>
+            <div>
+              <h4>45 licenses &amp; certifications</h4>
+              <p>Full list on LinkedIn</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills">
+          <p class="lbl">Skills</p>
+          <p class="grp" style="margin-top: 0">Tools</p>
+          <div class="tags">
+            <span>Figma</span><span>Blender</span><span>Maya</span
+            ><span>Unity 3D</span><span>Spark AR Studio</span
+            ><span>Three.js</span><span>VS Code</span
+            ><span>Firebase Hosting</span><span>Cloudflare</span>
+          </div>
+          <p class="grp">Design</p>
+          <div class="tags">
+            <span>UI design</span><span>UX design</span><span>UX research</span
+            ><span>Visual design</span><span>Art direction</span
+            ><span>Branding</span><span>Style guides</span><span>Motion</span>
+          </div>
+          <p class="grp">Immersive &amp; 3D</p>
+          <div class="tags">
+            <span>XR</span><span>WebXR</span><span>3D modelling</span
+            ><span>3D animation</span><span>Game development</span
+            ><span>Video editing</span>
+          </div>
+          <p class="grp">Web</p>
+          <div class="tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span
+            ><span>TypeScript</span><span>React</span><span>Next.js</span
+            ><span>Tailwind CSS</span><span>Python</span><span>Turborepo</span>
+          </div>
+          <p class="grp">Hardware, AI &amp; growth</p>
+          <div class="tags">
+            <span>IoT</span><span>Arduino</span><span>Raspberry Pi</span
+            ><span>AI tools</span><span>Cybersecurity fundamentals</span
+            ><span>Digital marketing</span>
+          </div>
+          <p class="grp">Teaching</p>
+          <div class="tags">
+            <span>Curriculum design</span><span>Mentorship</span
+            ><span>Workshops</span><span>Hackathons</span>
+          </div>
+        </section>
+
+        <section id="contact">
+          <p class="lbl">Contact</p>
+          <p class="chip">It's time to</p>
+          <p class="cta" aria-label="Build your brand">
+            Build your<em class="rot" aria-hidden="true"
+              ><span id="rw">Brand</span></em
+            >
+          </p>
+          <div class="acts">
+            <a class="btn fill" href="http://wa.me/917306728337">Hire me ↗</a
+            ><a class="btn" href="https://www.linkedin.com/in/wizardsixteen"
+              >LinkedIn ↗</a
+            ><a class="btn" href="https://riglabs.co">riglabs.co ↗</a>
+          </div>
+        </section>
+        <canvas id="horizon-canvas" class="horizon-canvas" aria-hidden="true"></canvas>
+      </main>
+    </div>
+    <script>
+      (function () {
+        var w = [
+            "Brand",
+            "Shop",
+            "Dream",
+            "Product",
+            "Story",
+            "Startup",
+            "Idea",
+            "Studio",
+            "Course",
+            "Future",
+          ],
+          i = 0,
+          el = document.getElementById("rw");
+        if (!el || matchMedia("(prefers-reduced-motion: reduce)").matches)
+          return;
+        setInterval(function () {
+          el.className = "out";
+          setTimeout(function () {
+            i = (i + 1) % w.length;
+            el.textContent = w[i];
+            el.className = "pre";
+            void el.offsetWidth;
+            el.className = "";
+          }, 320);
+        }, 1600);
+      })();
+    </script>
+    <script>
+      (function () {
+        var P = document.getElementById("mp");
+        if (!P) return;
+        var phi = (1 + Math.sqrt(5)) / 2,
+          N = 30,
+          R = 17;
+        function mk(v, e) {
+          var m = 0;
+          v.forEach(function (p) {
+            m = Math.max(m, Math.hypot(p[0], p[1], p[2]));
+          });
+          function sc(p) {
+            return [p[0] / m, p[1] / m, p[2] / m];
+          }
+          var o = e.map(function (q) {
+            return [sc(q[0]), sc(q[1])];
+          });
+          return Array.apply(null, Array(N)).map(function (_, i) {
+            return o[i % o.length];
+          });
+        }
+        function byDist(v, d) {
+          var e = [];
+          for (var i = 0; i < v.length; i++)
+            for (var j = i + 1; j < v.length; j++) {
+              var dd = Math.hypot(
+                v[i][0] - v[j][0],
+                v[i][1] - v[j][1],
+                v[i][2] - v[j][2],
+              );
+              if (Math.abs(dd - d) < 1e-6) e.push([v[i], v[j]]);
+            }
+          return e;
+        }
+        function byIdx(v, ix) {
+          return ix.map(function (a) {
+            return [v[a[0]], v[a[1]]];
+          });
+        }
+        var cv = [],
+          s1 = [1, -1];
+        s1.forEach(function (x) {
+          s1.forEach(function (y) {
+            s1.forEach(function (z) {
+              cv.push([x, y, z]);
+            });
+          });
+        });
+        var ov = [
+          [1, 0, 0],
+          [-1, 0, 0],
+          [0, 1, 0],
+          [0, -1, 0],
+          [0, 0, 1],
+          [0, 0, -1],
+        ];
+        var iv = [];
+        [1, -1].forEach(function (a) {
+          [1, -1].forEach(function (b) {
+            iv.push([0, a, b * phi]);
+            iv.push([a, b * phi, 0]);
+            iv.push([b * phi, 0, a]);
+          });
+        });
+        var pv = [
+          [-1, -1, -1],
+          [1, -1, -1],
+          [1, -1, 1],
+          [-1, -1, 1],
+          [0, 1.2, 0],
+        ];
+        var tv = [];
+        for (var k = 0; k < 3; k++) {
+          var a = (k * 2 * Math.PI) / 3 + Math.PI / 2,
+            x = 1.2 * Math.cos(a),
+            z = 1.2 * Math.sin(a);
+          tv.push([x, 1, z]);
+          tv.push([x, -1, z]);
+        }
+        var shapes = [
+          mk(cv, byDist(cv, 2)),
+          mk(ov, byDist(ov, Math.SQRT2)),
+          mk(
+            pv,
+            byIdx(pv, [
+              [0, 1],
+              [1, 2],
+              [2, 3],
+              [3, 0],
+              [4, 0],
+              [4, 1],
+              [4, 2],
+              [4, 3],
+            ]),
+          ),
+          mk(iv, byDist(iv, 2)),
+          mk(
+            tv,
+            byIdx(tv, [
+              [0, 2],
+              [2, 4],
+              [4, 0],
+              [1, 3],
+              [3, 5],
+              [5, 1],
+              [0, 1],
+              [2, 3],
+              [4, 5],
+            ]),
+          ),
+        ];
+        var HOLD = 2000,
+          MORPH = 1900,
+          CYC = HOLD + MORPH;
+        function dist(a, b) {
+          return Math.hypot(a[0] - b[0], a[1] - b[1], a[2] - b[2]);
+        }
+        function hung(c) {
+          var n = c.length,
+            u = [],
+            v = [],
+            pp = [],
+            way = [],
+            i,
+            j;
+          for (i = 0; i <= n; i++) {
+            u[i] = 0;
+            v[i] = 0;
+            pp[i] = 0;
+            way[i] = 0;
+          }
+          for (i = 1; i <= n; i++) {
+            pp[0] = i;
+            var j0 = 0,
+              minv = [],
+              used = [];
+            for (j = 0; j <= n; j++) {
+              minv[j] = Infinity;
+              used[j] = false;
+            }
+            do {
+              used[j0] = true;
+              var i0 = pp[j0],
+                delta = Infinity,
+                j1 = 0;
+              for (j = 1; j <= n; j++)
+                if (!used[j]) {
+                  var cur = c[i0 - 1][j - 1] - u[i0] - v[j];
+                  if (cur < minv[j]) {
+                    minv[j] = cur;
+                    way[j] = j0;
+                  }
+                  if (minv[j] < delta) {
+                    delta = minv[j];
+                    j1 = j;
+                  }
+                }
+              for (j = 0; j <= n; j++) {
+                if (used[j]) {
+                  u[pp[j]] += delta;
+                  v[j] -= delta;
+                } else minv[j] -= delta;
+              }
+              j0 = j1;
+            } while (pp[j0] !== 0);
+            do {
+              var jj = way[j0];
+              pp[j0] = pp[jj];
+              j0 = jj;
+            } while (j0);
+          }
+          var res = [];
+          for (j = 1; j <= n; j++) res[pp[j] - 1] = j - 1;
+          return res;
+        }
+        function oc(a, b) {
+          return Math.min(
+            dist(a[0], b[0]) + dist(a[1], b[1]),
+            dist(a[0], b[1]) + dist(a[1], b[0]),
+          );
+        }
+        var pairs = shapes.map(function (A, k) {
+          var B = shapes[(k + 1) % shapes.length];
+          var c = A.map(function (a) {
+            return B.map(function (b) {
+              return oc(a, b);
+            });
+          });
+          var r = hung(c);
+          return A.map(function (a, i) {
+            var b = B[r[i]];
+            if (
+              dist(a[0], b[1]) + dist(a[1], b[0]) <
+              dist(a[0], b[0]) + dist(a[1], b[1])
+            )
+              b = [b[1], b[0]];
+            return [a, b];
+          });
+        });
+        function ease(p) {
+          return p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+        }
+        /* Free Roaming: the shape can go anywhere across the name area */
+        var SVG = P.closest("svg");
+        var lastShapeIdx = -1;
+        var lastPos = { x: -999, y: -999 };
+        function reposition() {
+          if (!SVG) return;
+          var side = SVG.parentElement;
+          if (!side) return;
+
+          var sideRect = side.getBoundingClientRect();
+          var sw = sideRect.width;
+          var sh = sideRect.height;
+          var isMobile = window.innerWidth < 900;
+
+          // Generous, prominent shape size
+          var shapeSize;
+          if (isMobile) {
+            shapeSize = Math.max(180, Math.min(250, sw * 0.55));
+          } else {
+            shapeSize = Math.max(280, Math.min(380, sw * 0.6));
+          }
+
+          SVG.style.width = shapeSize + "px";
+          var ew = shapeSize;
+          var eh = shapeSize;
+
+          // Free roaming across the full name area canvas:
+          // Top, center, bottom, left, right, behind text, across open space
+          var minX = -10;
+          var maxX = Math.max(minX + 20, sw - ew + 30);
+
+          var navEl =
+            document.getElementById("side-nav") || side.querySelector("nav");
+          var navBottom = navEl
+            ? navEl.getBoundingClientRect().bottom - sideRect.top
+            : 40;
+
+          var minY = Math.max(10, navBottom - 10);
+          var maxY = Math.max(minY + 40, sh - eh + 30);
+
+          // Pick a new coordinate with notable displacement so it smoothly glides across
+          var rx, ry;
+          var attempts = 0;
+          do {
+            rx = minX + Math.random() * (maxX - minX);
+            ry = minY + Math.random() * (maxY - minY);
+            var dx = rx - lastPos.x;
+            var dy = ry - lastPos.y;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            attempts++;
+          } while (dist < 100 && attempts < 12);
+
+          var isInitial = lastPos.x === -999;
+          lastPos = { x: rx, y: ry };
+
+          if (isInitial) {
+            SVG.style.transition = "none";
+            SVG.style.left = rx + "px";
+            SVG.style.top = ry + "px";
+            SVG.style.right = "auto";
+            void SVG.offsetWidth;
+          } else {
+            SVG.style.transition =
+              "left 2.4s cubic-bezier(0.4, 0, 0.2, 1), top 2.4s cubic-bezier(0.4, 0, 0.2, 1), width 2s cubic-bezier(0.4, 0, 0.2, 1)";
+            SVG.style.left = rx + "px";
+            SVG.style.top = ry + "px";
+            SVG.style.right = "auto";
+          }
+        }
+        function draw(t) {
+          var i = Math.floor(t / CYC) % shapes.length,
+            r = t % CYC,
+            p = r < HOLD ? 0 : ease((r - HOLD) / MORPH);
+          /* Reposition on each new shape */
+          if (i !== lastShapeIdx) {
+            lastShapeIdx = i;
+            reposition();
+          }
+          var Q = pairs[i];
+          var ay = t * 0.00035,
+            ax = 0.55,
+            ca = Math.cos(ay),
+            sa = Math.sin(ay),
+            cx = Math.cos(ax),
+            sx = Math.sin(ax),
+            d = "";
+          function pr(a, b) {
+            var x = a[0] + (b[0] - a[0]) * p,
+              y = a[1] + (b[1] - a[1]) * p,
+              z = a[2] + (b[2] - a[2]) * p;
+            var x1 = x * ca + z * sa,
+              z1 = -x * sa + z * ca,
+              y2 = y * cx - z1 * sx;
+            return (24 + R * x1).toFixed(2) + " " + (24 + R * y2).toFixed(2);
+          }
+          for (var k = 0; k < N; k++) {
+            d +=
+              "M" +
+              pr(Q[k][0][0], Q[k][1][0]) +
+              "L" +
+              pr(Q[k][0][1], Q[k][1][1]);
+          }
+          P.setAttribute("d", d);
+        }
+
+        var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var startTimestamp = 0;
+        function loop(t) {
+          if (!startTimestamp) startTimestamp = t;
+          draw(t - startTimestamp);
+          requestAnimationFrame(loop);
+        }
+
+        // Shape appears and animates only after 1500ms after page load
+        setTimeout(function () {
+          reposition();
+          draw(0);
+          if (SVG) SVG.classList.add("on");
+          if (!reduced) {
+            requestAnimationFrame(loop);
+          }
+        }, 1500);
+      })();
+    </script>
+    <script>
+      (function () {
+        if (!matchMedia("(hover:hover) and (pointer:fine)").matches) return;
+        var d = document.createElement("div"),
+          r = document.createElement("div");
+        d.className = "cur-dot";
+        r.className = "cur-ring";
+        d.setAttribute("aria-hidden", "true");
+        r.setAttribute("aria-hidden", "true");
+        document.body.appendChild(r);
+        document.body.appendChild(d);
+        document.documentElement.classList.add("cc");
+        var x = 0,
+          y = 0,
+          rx = 0,
+          ry = 0,
+          k = matchMedia("(prefers-reduced-motion: reduce)").matches ? 1 : 0.18;
+        addEventListener("mousemove", function (e) {
+          x = e.clientX;
+          y = e.clientY;
+          if (!d.classList.contains("on")) {
+            rx = x;
+            ry = y;
+            d.classList.add("on");
+            r.classList.add("on");
+          }
+          d.style.transform = "translate(" + x + "px," + y + "px)";
+          r.classList.toggle(
+            "h",
+            !!(e.target.closest && e.target.closest("a,button,.btn")),
+          );
+        });
+        document.addEventListener("mouseleave", function () {
+          d.classList.remove("on");
+          r.classList.remove("on");
+        });
+        addEventListener("mousedown", function () {
+          r.classList.add("d");
+        });
+        addEventListener("mouseup", function () {
+          r.classList.remove("d");
+        });
+        (function t() {
+          rx += (x - rx) * k;
+          ry += (y - ry) * k;
+          r.style.transform = "translate(" + rx + "px," + ry + "px)";
+          requestAnimationFrame(t);
+        })();
+      })();
+    </script>
+    <script>
+      /* Dynamic Button Fill Origin (Hover & Click/Touch Expansion) */
+      (function () {
+        var buttons = document.querySelectorAll(".btn");
+        buttons.forEach(function (btn) {
+          function setOrigin(e) {
+            var rect = btn.getBoundingClientRect();
+            var x = Math.round(e.clientX - rect.left);
+            var y = Math.round(e.clientY - rect.top);
+            btn.style.setProperty("--x", x + "px");
+            btn.style.setProperty("--y", y + "px");
+            return { x: x, y: y };
+          }
+
+          btn.addEventListener("pointerenter", setOrigin);
+          btn.addEventListener("pointerleave", setOrigin);
+
+          btn.addEventListener("pointerdown", function (e) {
+            var pt = setOrigin(e);
+            if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+            var ripple = document.createElement("span");
+            ripple.className = "btn-click-ripple";
+            ripple.style.left = pt.x + "px";
+            ripple.style.top = pt.y + "px";
+            btn.appendChild(ripple);
+            setTimeout(function () {
+              if (ripple.parentElement) {
+                ripple.remove();
+              }
+            }, 600);
+          });
+        });
+      })();
+    </script>
+    <script>
+      /* Page Load Orchestration: Name Area (700ms) -> Content Area */
+      (function () {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        // 1. Prepare Name Area Elements
+        var sideElements = document.querySelectorAll(
+          ".side .role, .side .promise, .side .side-ctas, .side .side-stats, .side .brands",
+        );
+        sideElements.forEach(function (el) {
+          el.classList.add("rise-item");
+        });
+
+        // Prepare Nav Links
+        var navLinks = document.querySelectorAll("nav a");
+        navLinks.forEach(function (el) {
+          el.classList.add("rise-item");
+        });
+
+        // 2. Prepare Content Area Elements
+        var targetSelector =
+          "main .lbl, main .chip, main .big, main .txt, main .svc-divider, main .svc > div, main .row, main .cols > div, main .grp, main .tags, main .cta, main .acts";
+        var contentItems = document.querySelectorAll(targetSelector);
+        contentItems.forEach(function (el) {
+          if (!el.classList.contains("tags")) {
+            el.classList.add("rise-item");
+          }
+        });
+
+        // Prepare individual tag pills in Brands and Skills sections
+        var tagSpans = document.querySelectorAll("main .tags span");
+        tagSpans.forEach(function (span) {
+          span.classList.add("rise-item");
+        });
+
+        function initContentAnimations() {
+          // Stagger nav links as content area animation triggers
+          navLinks.forEach(function (el, i) {
+            setTimeout(function () {
+              el.classList.add("rise-in");
+            }, i * 65);
+          });
+
+          if (!("IntersectionObserver" in window)) {
+            contentItems.forEach(function (el) {
+              el.classList.add("rise-in");
+            });
+            tagSpans.forEach(function (span) {
+              span.classList.add("rise-in");
+            });
+            return;
+          }
+
+          var observer = new IntersectionObserver(
+            function (entries, obs) {
+              var batchIndex = 0;
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  var el = entry.target;
+                  obs.unobserve(el);
+
+                  var delay = 160 + Math.min(batchIndex * 65, 260);
+                  batchIndex++;
+
+                  if (el.classList.contains("tags")) {
+                    el.classList.add("rise-in");
+                    var tags = el.querySelectorAll("span");
+                    tags.forEach(function (tag, tagIdx) {
+                      tag.classList.add("rise-item");
+                      setTimeout(
+                        function () {
+                          tag.classList.add("rise-in");
+                        },
+                        delay + tagIdx * 45,
+                      );
+                    });
+                  } else {
+                    setTimeout(function () {
+                      el.classList.add("rise-in");
+                    }, delay);
+                  }
+                }
+              });
+            },
+            {
+              threshold: 0,
+              rootMargin: "0px 0px -7% 0px", // 7% above bottom edge
+            },
+          );
+
+          contentItems.forEach(function (el) {
+            observer.observe(el);
+          });
+
+          function updateBottomState() {
+            var scrollPos = window.scrollY + window.innerHeight;
+            var docHeight = document.documentElement.scrollHeight;
+            var distFromBottom = docHeight - scrollPos;
+
+            // Ensure any remaining elements reveal when scrolled near the very bottom
+            if (distFromBottom < 100) {
+              contentItems.forEach(function (el) {
+                if (!el.classList.contains("rise-in")) {
+                  el.classList.add("rise-in");
+                  observer.unobserve(el);
+                }
+              });
+              tagSpans.forEach(function (tag) {
+                if (!tag.classList.contains("rise-in")) {
+                  tag.classList.add("rise-in");
+                }
+              });
+            }
+          }
+          window.addEventListener("scroll", updateBottomState, {
+            passive: true,
+          });
+          updateBottomState();
+        }
+
+        // Animate Name Area at exactly 700ms after load
+        setTimeout(function () {
+          sideElements.forEach(function (el, i) {
+            setTimeout(function () {
+              el.classList.add("rise-in");
+            }, i * 70);
+          });
+
+          // Then only start content area animation
+          setTimeout(
+            function () {
+              initContentAnimations();
+            },
+            sideElements.length * 70 + 80,
+          );
+        }, 700);
+      })();
+    </script>
+    <script>
+      /* Smooth Inertial Scrolling for Wheel, Trackpad, and Nav Links */
+      (function () {
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        if (!matchMedia("(hover: hover)").matches) return;
+
+        var currentY = window.scrollY;
+        var targetY = window.scrollY;
+        var isRunning = false;
+        var ease = 0.085;
+
+        function clamp(val, min, max) {
+          return Math.max(min, Math.min(val, max));
+        }
+
+        function getMaxScroll() {
+          return Math.max(
+            0,
+            document.documentElement.scrollHeight - window.innerHeight,
+          );
+        }
+
+        function update() {
+          var diff = targetY - currentY;
+          currentY += diff * ease;
+
+          if (Math.abs(diff) > 0.5) {
+            window.scrollTo(0, currentY);
+            requestAnimationFrame(update);
+          } else {
+            currentY = targetY;
+            window.scrollTo(0, targetY);
+            isRunning = false;
+          }
+        }
+
+        window.addEventListener(
+          "wheel",
+          function (e) {
+            if (e.ctrlKey) return;
+            e.preventDefault();
+
+            targetY += e.deltaY;
+            targetY = clamp(targetY, 0, getMaxScroll());
+
+            if (!isRunning) {
+              isRunning = true;
+              currentY = window.scrollY;
+              requestAnimationFrame(update);
+            }
+          },
+          { passive: false },
+        );
+
+        window.addEventListener(
+          "scroll",
+          function () {
+            if (!isRunning) {
+              targetY = window.scrollY;
+              currentY = window.scrollY;
+            }
+          },
+          { passive: true },
+        );
+
+        window.addEventListener(
+          "resize",
+          function () {
+            targetY = clamp(targetY, 0, getMaxScroll());
+            currentY = clamp(currentY, 0, getMaxScroll());
+          },
+          { passive: true },
+        );
+
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            var href = link.getAttribute("href");
+            if (!href || href === "#") return;
+            var target = document.querySelector(href);
+            if (target) {
+              e.preventDefault();
+              var rect = target.getBoundingClientRect();
+              var smt =
+                parseFloat(window.getComputedStyle(target).scrollMarginTop) ||
+                0;
+              targetY = clamp(
+                window.scrollY + rect.top - smt,
+                0,
+                getMaxScroll(),
+              );
+              if (!isRunning) {
+                isRunning = true;
+                currentY = window.scrollY;
+                requestAnimationFrame(update);
+              }
+              try {
+                history.pushState(null, null, href);
+              } catch (_) {}
+            }
+          });
+        });
+      })();
+    </script>
+    <script>
+      /* 3D Wireframe Perspective Horizon Canvas */
+      (function () {
+        var canvas = document.getElementById("horizon-canvas");
+        if (!canvas) return;
+        var ctx = canvas.getContext("2d");
+        if (!ctx) return;
+
+        var W = 0,
+          H = 0;
+        var animId = null;
+        var isVisible = false;
+        var mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+
+        function resize() {
+          var rect = canvas.getBoundingClientRect();
+          var dpr = Math.min(window.devicePixelRatio || 1, 2);
+          W = rect.width;
+          H = rect.height;
+          canvas.width = W * dpr;
+          canvas.height = H * dpr;
+          ctx.resetTransform();
+          ctx.scale(dpr, dpr);
+        }
+
+        window.addEventListener("resize", function () {
+          if (isVisible) resize();
+        });
+
+        window.addEventListener(
+          "mousemove",
+          function (e) {
+            if (!isVisible) return;
+            var rect = canvas.getBoundingClientRect();
+            if (e.clientY >= rect.top - 120 && e.clientY <= rect.bottom + 80) {
+              mouse.targetX = e.clientX - rect.left - W * 0.5;
+              mouse.targetY = e.clientY - rect.top;
+            }
+          },
+          { passive: true },
+        );
+
+        var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        // Grid Parameters
+        var cols = 32;
+        var rows = 22;
+        var gridSpacingX = 40;
+        var gridSpacingZ = 30;
+        var fov = 280;
+        var cameraY = -70;
+        var horizonY = 35;
+
+        function getHeight(x, z, time) {
+          var wave1 =
+            Math.sin(x * 0.007 + time * 0.001) *
+            Math.cos(z * 0.008 + time * 0.0014) *
+            16;
+          var wave2 = Math.sin(x * 0.014 - z * 0.01 + time * 0.0018) * 5;
+          var dx = x - mouse.x;
+          var dist = Math.sqrt(dx * dx + z * z);
+          var mouseInfluence =
+            Math.max(0, 1 - dist / 380) * 15 * Math.sin(time * 0.003);
+          return wave1 + wave2 + mouseInfluence;
+        }
+
+        function project(x, y, z) {
+          var scale = fov / (fov + z);
+          return {
+            x: W * 0.5 + x * scale,
+            y: horizonY - (y - cameraY) * scale,
+            depth: z,
+          };
+        }
+
+        function render(time) {
+          if (!isVisible) return;
+          ctx.clearRect(0, 0, W, H);
+
+          mouse.x += (mouse.targetX - mouse.x) * 0.06;
+          mouse.y += (mouse.targetY - mouse.y) * 0.06;
+
+          var speed = 0.03;
+          var zOffset = (time * speed) % gridSpacingZ;
+
+          var grid = [];
+          for (var r = 0; r <= rows; r++) {
+            grid[r] = [];
+            var z = r * gridSpacingZ - zOffset + 24;
+            if (z < 12) continue;
+            for (var c = -cols / 2; c <= cols / 2; c++) {
+              var x = c * gridSpacingX;
+              var y = getHeight(x, z + time * speed, time);
+              grid[r].push(project(x, y, z));
+            }
+          }
+
+          // 1. Draw Latitudinal horizontal scan lines
+          for (var r = 0; r < grid.length; r++) {
+            var rowPts = grid[r];
+            if (!rowPts || rowPts.length < 2) continue;
+            var zRatio = r / rows;
+            var alpha = (1 - zRatio * 0.82) * 0.36;
+            ctx.beginPath();
+            ctx.moveTo(rowPts[0].x, rowPts[0].y);
+            for (var c = 1; c < rowPts.length; c++) {
+              ctx.lineTo(rowPts[c].x, rowPts[c].y);
+            }
+            ctx.strokeStyle = "rgba(254, 59, 21, " + alpha.toFixed(3) + ")";
+            ctx.lineWidth = Math.max(0.6, (1 - zRatio) * 1.3);
+            ctx.stroke();
+          }
+
+          // 2. Draw Longitudinal depth perspective lines
+          var numCols = grid[0] ? grid[0].length : 0;
+          for (var c = 0; c < numCols; c++) {
+            ctx.beginPath();
+            var started = false;
+            for (var r = 0; r < grid.length; r++) {
+              var pt = grid[r] && grid[r][c];
+              if (!pt) continue;
+              if (!started) {
+                ctx.moveTo(pt.x, pt.y);
+                started = true;
+              } else {
+                ctx.lineTo(pt.x, pt.y);
+              }
+            }
+            ctx.strokeStyle = "rgba(254, 59, 21, 0.16)";
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+
+          if (!reduced) {
+            animId = requestAnimationFrame(render);
+          }
+        }
+
+        function checkHorizonVisibility() {
+          var scrollBottom = window.scrollY + window.innerHeight;
+          var docHeight = document.documentElement.scrollHeight;
+          var distFromBottom = docHeight - scrollBottom;
+          var shouldShow = distFromBottom < 380;
+
+          if (shouldShow && !isVisible) {
+            isVisible = true;
+            resize();
+            canvas.classList.add("on");
+            if (!reduced && !animId) {
+              animId = requestAnimationFrame(render);
+            } else if (reduced) {
+              render(0);
+            }
+          } else if (!shouldShow && isVisible) {
+            isVisible = false;
+            canvas.classList.remove("on");
+            if (animId) {
+              cancelAnimationFrame(animId);
+              animId = null;
+            }
+          }
+        }
+
+        window.addEventListener("scroll", checkHorizonVisibility, {
+          passive: true,
+        });
+        checkHorizonVisibility();
+      })();
+    </script>
+  </body>
+</html>
