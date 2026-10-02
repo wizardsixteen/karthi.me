@@ -1090,6 +1090,12 @@
           display: none;
         }
       }
+
+      .tags span.more {
+        border-style: dashed;
+        border-color: rgba(254, 59, 21, 0.55);
+        color: var(--accent);
+      }
     </style>
   </head>
   <body>
@@ -1139,7 +1145,12 @@
             I can turn your ideas into reality.
           </p>
           <div class="side-ctas">
-            <a class="btn fill" href="https://wa.me/917306728337">Hire me ↗</a>
+            <a
+              class="btn fill"
+              target="_blank"
+              href="https://wa.me/917306728337"
+              >Hire me ↗</a
+            >
             <a class="btn" href="#services">See services</a>
           </div>
         </div>
@@ -1161,7 +1172,7 @@
           <p class="lbl">About</p>
           <p class="chip">Visual designer by heart.</p>
           <div style="display: flex; flex-direction: row; gap: 1.5rem">
-            <p class="big" style="width: 100%; max-width: 40%">
+            <p class="big" style="width: 100%; max-width: 60%">
               "I make products people understand at a glance and enjoy using."
             </p>
             <p class="txt" style="width: 100%; max-width: 40%">
@@ -1176,7 +1187,6 @@
         </section>
         <section id="services">
           <p class="lbl">Services</p>
-          <div class="svc-divider"></div>
           <div class="svc">
             <div>
               <svg viewBox="0 0 48 48" aria-hidden="true">
@@ -1302,23 +1312,35 @@
             </div>
           </div>
           <div class="acts">
-            <a class="btn" href="https://wa.me/917306728337">Hire me ↗</a>
+            <a class="btn" target="_blank" href="https://wa.me/917306728337"
+              >Hire me ↗</a
+            >
           </div>
         </section>
 
         <section>
           <p class="lbl">Brands &amp; communities</p>
           <div class="tags">
-            <span>Riglabs Collective</span><span>Zilicon Technologies</span
-            ><span>Google Developers Group</span><span>K-DISC</span
-            ><span>IEEE</span><span>XtrudAR Community</span><span>Meta</span>
+            <span>Amazon</span>
+            <span>ASAP Kerala</span>
+            <span>Figma</span>
+            <span>Google Developers Group</span>
+            <span>ICTAK</span>
+            <span>IEEE</span>
+            <span>K-DISC</span>
+            <span>Meta</span>
+            <span>ProApp</span>
+            <span>Riglabs Collective</span>
+            <span>XtrudAR Community</span>
+            <span>Zilicon Technologies</span>
+            <span class="more">+30 more</span>
           </div>
         </section>
 
         <section id="experience">
           <p class="lbl">Experience</p>
           <div class="row">
-            <h3 class="sm">Creative Officer</h3>
+            <h3 class="sm">Mentor</h3>
             <i>Sep 2019 - Present</i>
             <p>
               Riglabs Collective. Leads cross-platform development, UX research
@@ -1337,8 +1359,26 @@
           </div>
           <div class="row">
             <h3 class="sm">Designer, volunteer</h3>
-            <i>Dec 2022 - Present</i>
-            <p>Google Developers Group.</p>
+            <i>Dec 2022 - Dec 2024</i>
+            <p>Google Developers Groups, Trivandrum.</p>
+          </div>
+          <div class="row">
+            <h3 class="sm">Campus Ambassador</h3>
+            <i>Jun 2021 - Sep 2021</i>
+            <p>
+              As a ProApp Campus ambassador, among the aims is to educate
+              students and help them get started with design within the college
+              community. Another thing is to intend to build strong leaders
+              demonstrating great design, marketing, and people skills through
+              the program. Also, Ambassador will help build a community of
+              strong individuals by bringing them together and talking about
+              everything Design.
+            </p>
+          </div>
+          <div class="row">
+            <h3 class="sm">Data Audit Executive</h3>
+            <i>Jun 2021 - July 2021</i>
+            <p>Revyrie Global</p>
           </div>
         </section>
 
@@ -1348,37 +1388,37 @@
             ><h3>riglabs.co</h3>
             <i>Website ↗</i>
             <p>
-              Public site for Riglabs Collective. Next.js, React, TypeScript and
-              Tailwind CSS v4 in a Turborepo monorepo, with a shared icon
-              component system and design tokens. Firebase Hosting, Cloudflare
-              DNS.
+              Website creation for Riglabs Collective using Next.js, React,
+              TypeScript and Tailwind CSS v4 in a Turborepo monorepo.
             </p></a
           >
           <div class="row">
             <h3>Courses &amp; syllabi</h3>
             <i>Content</i>
             <p>
-              Course structure and syllabus production across the Riglabs
-              domains.
+              Academic structure management and syllabus production across the
+              Riglabs Collective domains.
             </p>
           </div>
           <div class="row">
             <h3>Training</h3>
             <i>Facilitation</i>
-            <p>Sessions and mentoring for students on design, motion and XR.</p>
+            <p>Sessions and mentoring for students on design, code & motion.</p>
+          </div>
+          <div class="row">
+            <h3>Meta Spark AR</h3>
+            <i>Facilitation</i>
+            <p>
+              Selected as one of 40 participants in South India by Meta, Inc.
+              (formerly Facebook) to teach XR technologies using its Spark AR
+              platform, through the School of Innovation initiative.
+            </p>
           </div>
         </section>
 
         <section id="awards">
           <p class="lbl">Honors &amp; awards</p>
-          <div class="row">
-            <h3 class="sm">Meta hackathons</h3>
-            <i>Host</i>
-            <p>
-              Hosted hackathons on behalf of Meta, making $23,000+ possible
-              among students.
-            </p>
-          </div>
+
           <div class="row">
             <h3 class="sm">Young Innovators Programme 5.0</h3>
             <i>Sep 2023</i>
@@ -1396,11 +1436,14 @@
             </p>
           </div>
           <div class="row">
-            <h3 class="sm">Spark AR HackARthon 2022</h3>
-            <i>Mar 2022</i>
+            <h3 class="sm">META HACKATHONS & SPARK AR</h3>
+            <i>Host - Mar 2022</i>
             <p>
-              XtrudAR Community. AR effects for Messenger and Instagram in Spark
-              AR Studio, a warm-up for Meta Spark Playtime.
+              Hosted supporting events for Meta's global Spark AR Hackathon in
+              2022, introducing students to augmented reality development using
+              Spark AR Studio. Trained 80 participants with no prior AR
+              experience, contributing to Kerala's first-ever AR hackathon and
+              enabling students to compete for over $23,000 in prize money.
             </p>
           </div>
           <div class="row">
@@ -1418,7 +1461,7 @@
           <div class="cols">
             <div>
               <h4>BTech, Mechanical Engineering</h4>
-              <p>Sarabhai Institute of Science and Technology, 2016 – 2020</p>
+              <p>Sarabhai Institute of Science and Technology, 2016 - 2020</p>
             </div>
             <div>
               <h4>Mentoring</h4>
@@ -1427,13 +1470,22 @@
               </p>
             </div>
             <div>
-              <h4>Design For Metaverse</h4>
-              <p>ProApp - Learn Design, Apr 2022</p>
+              <h4>Foundations of User Experience Design</h4>
+              <p>Google, Apr 2021</p>
             </div>
             <div>
-              <h4>45 licenses &amp; certifications</h4>
+              <h4>45+ licenses &amp; certifications</h4>
               <p>Full list on LinkedIn</p>
             </div>
+          </div>
+          <div class="acts">
+            <a
+              class="btn"
+              target="_blank"
+              href="https://www.linkedin.com/in/wizardsixteen/details/certifications/"
+            >
+              Certifications ↗
+            </a>
           </div>
         </section>
 
@@ -1486,10 +1538,19 @@
             >
           </p>
           <div class="acts">
-            <a class="btn fill" href="https://wa.me/917306728337">Hire me ↗</a
-            ><a class="btn" href="https://www.linkedin.com/in/wizardsixteen"
+            <a
+              class="btn fill"
+              target="_blank"
+              href="https://wa.me/917306728337"
+              >Hire me ↗</a
+            ><a
+              class="btn"
+              target="_blank"
+              href="https://www.linkedin.com/in/wizardsixteen"
               >LinkedIn ↗</a
-            ><a class="btn" href="https://riglabs.co">riglabs.co ↗</a>
+            ><a class="btn" target="_blank" href="https://riglabs.co"
+              >riglabs.co ↗</a
+            >
           </div>
         </section>
       </main>
