@@ -97,7 +97,7 @@
         "sameAs": [
           "https://www.linkedin.com/in/wizardsixteen",
           "https://riglabs.co",
-          "http://wa.me/917306728337"
+          "https://wa.me/917306728337"
         ],
         "knowsAbout": [
           "UI/UX Design",
@@ -264,30 +264,6 @@
       main > section {
         position: relative;
         z-index: 1;
-      }
-      .horizon-canvas {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: clamp(14rem, 28vh, 22rem);
-        pointer-events: none;
-        z-index: 0;
-        mask-image: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 1) 20%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        -webkit-mask-image: linear-gradient(
-          to top,
-          rgba(0, 0, 0, 1) 20%,
-          rgba(0, 0, 0, 0) 100%
-        );
-        opacity: 0;
-        transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-      .horizon-canvas.on {
-        opacity: 1;
       }
       section {
         margin-bottom: clamp(3.5rem, 8vw, 6rem);
@@ -546,15 +522,15 @@
       .rot span {
         display: inline-block;
         transition:
-          transform 0.45s cubic-bezier(0.22, 1.4, 0.36, 1),
-          opacity 0.35s ease-out;
+          transform 0.3s cubic-bezier(0.22, 1.4, 0.36, 1),
+          opacity 0.25s ease-out;
       }
       .rot span.out {
         transform: translateY(-110%) scale(0.92);
         opacity: 0;
         transition:
-          transform 0.3s cubic-bezier(0.55, 0, 1, 0.45),
-          opacity 0.25s ease-in;
+          transform 0.2s cubic-bezier(0.55, 0, 1, 0.45),
+          opacity 0.16s ease-in;
       }
       .rot span.pre {
         transform: translateY(110%) scale(0.92);
@@ -904,9 +880,228 @@
           display: none !important;
         }
       }
+
+      :root {
+        --flow: 0;
+      }
+      .glow {
+        display: none;
+      }
+      @media (min-width: 900px) {
+        .glow {
+          display: block;
+          position: fixed;
+          inset: 0;
+          z-index: 0;
+          pointer-events: none;
+          overflow: hidden;
+        }
+        .aur {
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 45.4545%;
+        }
+        .aur-a {
+          overflow: hidden;
+        }
+        .aur::before,
+        .aur::after {
+          content: "";
+          position: absolute;
+          width: 150%;
+          height: 150%;
+          top: -25%;
+          left: -25%;
+        }
+        .aur::before {
+          background:
+            radial-gradient(
+              ellipse 70% 60% at 50% 50%,
+              rgba(254, 59, 21, 0.4) 0%,
+              transparent 70%
+            ),
+            radial-gradient(
+              ellipse 50% 40% at 30% 50%,
+              rgba(180, 30, 10, 0.3) 0%,
+              transparent 60%
+            );
+          animation: aurora1 20s ease-in-out infinite;
+        }
+        .aur::after {
+          background:
+            radial-gradient(
+              ellipse 60% 50% at 50% 50%,
+              rgba(200, 40, 15, 0.35) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              ellipse 40% 35% at 60% 50%,
+              rgba(120, 15, 5, 0.3) 0%,
+              transparent 50%
+            );
+          animation: aurora2 25s ease-in-out infinite;
+        }
+        .glow-b {
+          position: absolute;
+          inset: 0;
+          opacity: var(--flow);
+        }
+        .glow-flow {
+          position: absolute;
+          left: -5%;
+          right: -5%;
+          bottom: 0;
+          height: 100vh;
+          opacity: var(--flow);
+          background:
+            radial-gradient(
+              ellipse 50% 80% at 40% 68%,
+              rgba(190, 38, 14, 0.55),
+              transparent 74%
+            ),
+            radial-gradient(
+              ellipse 60% 70% at 62% 108%,
+              rgba(235, 50, 18, 0.55),
+              transparent 72%
+            ),
+            radial-gradient(
+              ellipse 50% 65% at 100% 100%,
+              rgba(170, 28, 10, 0.5),
+              transparent 72%
+            ),
+            radial-gradient(
+              ellipse 60% 75% at 28% 108%,
+              rgba(254, 59, 21, 0.55),
+              transparent 72%
+            ),
+            linear-gradient(to top, rgba(120, 22, 8, 0.5), transparent 80%);
+          animation: flowdrift 18s ease-in-out infinite alternate;
+        }
+        .side {
+          background: transparent;
+          border-right-color: rgba(38, 38, 42, calc(1 - var(--flow)));
+        }
+        .side::before,
+        .side::after {
+          display: none;
+        }
+      }
+      @keyframes flowdrift {
+        from {
+          transform: translateX(-3%) scale(1);
+        }
+        to {
+          transform: translateX(4%) scale(1.06);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .aur::before,
+        .aur::after,
+        .glow-flow {
+          animation: none;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .glow-c {
+          position: absolute;
+          inset: 0;
+          opacity: var(--flow);
+        }
+        .glow-c::before,
+        .glow-c::after {
+          content: "";
+          position: absolute;
+          width: 140%;
+          height: 120%;
+          left: -20%;
+          top: -10%;
+        }
+        .glow-c::before {
+          background:
+            radial-gradient(
+              ellipse 28% 45% at 62% 78%,
+              rgba(254, 59, 21, 0.42),
+              transparent 70%
+            ),
+            radial-gradient(
+              ellipse 22% 35% at 80% 90%,
+              rgba(190, 35, 12, 0.38),
+              transparent 70%
+            );
+          animation: aurora1 20s ease-in-out infinite;
+        }
+        .glow-c::after {
+          background:
+            radial-gradient(
+              ellipse 30% 40% at 45% 85%,
+              rgba(220, 45, 15, 0.4),
+              transparent 70%
+            ),
+            radial-gradient(
+              ellipse 20% 30% at 72% 70%,
+              rgba(130, 18, 6, 0.4),
+              transparent 60%
+            );
+          animation: aurora2 25s ease-in-out infinite;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .glow-c::before,
+        .glow-c::after {
+          animation: none;
+        }
+      }
+
+      @media (min-width: 900px) {
+        .glow {
+          contain: paint;
+        }
+        .glow-b,
+        .glow-c,
+        .glow-flow {
+          will-change: opacity;
+        }
+        .veil {
+          position: absolute;
+          inset: 0;
+          z-index: 2;
+          pointer-events: none;
+        }
+        .veil-b {
+          background: linear-gradient(
+            to bottom,
+            #0b0b0c 0%,
+            rgba(11, 11, 12, 0) 40%
+          );
+        }
+        .veil-c {
+          background: linear-gradient(
+            to bottom,
+            #0b0b0c 5%,
+            rgba(11, 11, 12, 0) 55%
+          );
+        }
+        .glow.idle .glow-b,
+        .glow.idle .glow-c,
+        .glow.idle .glow-flow {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
+    <div class="glow idle" aria-hidden="true">
+      <div class="glow-b">
+        <div class="aur"></div>
+        <i class="veil veil-b"></i>
+      </div>
+      <div class="glow-c"><i class="veil veil-c"></i></div>
+      <div class="glow-flow"></div>
+      <div class="aur aur-a"></div>
+    </div>
     <div class="wrap">
       <aside class="side">
         <svg
@@ -944,7 +1139,7 @@
             I can turn your ideas into reality.
           </p>
           <div class="side-ctas">
-            <a class="btn fill" href="http://wa.me/917306728337">Hire me ↗</a>
+            <a class="btn fill" href="https://wa.me/917306728337">Hire me ↗</a>
             <a class="btn" href="#services">See services</a>
           </div>
         </div>
@@ -1107,7 +1302,7 @@
             </div>
           </div>
           <div class="acts">
-            <a class="btn" href="http://wa.me/917306728337">Hire me ↗</a>
+            <a class="btn" href="https://wa.me/917306728337">Hire me ↗</a>
           </div>
         </section>
 
@@ -1291,13 +1486,12 @@
             >
           </p>
           <div class="acts">
-            <a class="btn fill" href="http://wa.me/917306728337">Hire me ↗</a
+            <a class="btn fill" href="https://wa.me/917306728337">Hire me ↗</a
             ><a class="btn" href="https://www.linkedin.com/in/wizardsixteen"
               >LinkedIn ↗</a
             ><a class="btn" href="https://riglabs.co">riglabs.co ↗</a>
           </div>
         </section>
-        <canvas id="horizon-canvas" class="horizon-canvas" aria-hidden="true"></canvas>
       </main>
     </div>
     <script>
@@ -1326,8 +1520,8 @@
             el.className = "pre";
             void el.offsetWidth;
             el.className = "";
-          }, 320);
-        }, 1600);
+          }, 200);
+        }, 1050);
       })();
     </script>
     <script>
@@ -1742,165 +1936,132 @@
       })();
     </script>
     <script>
-      /* Page Load Orchestration: Name Area (700ms) -> Content Area */
+      /* Staggered rise-up: name area on load, then every item as it scrolls into view */
       (function () {
         if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var $$ = function (sel) {
+          return Array.prototype.slice.call(document.querySelectorAll(sel));
+        };
 
-        // 1. Prepare Name Area Elements
-        var sideElements = document.querySelectorAll(
-          ".side .role, .side .promise, .side .side-ctas, .side .side-stats, .side .brands",
-        );
-        sideElements.forEach(function (el) {
-          el.classList.add("rise-item");
-        });
-
-        // Prepare Nav Links
-        var navLinks = document.querySelectorAll("nav a");
-        navLinks.forEach(function (el) {
-          el.classList.add("rise-item");
-        });
-
-        // 2. Prepare Content Area Elements
-        var targetSelector =
-          "main .lbl, main .chip, main .big, main .txt, main .svc-divider, main .svc, main .row, main .cols > div, main .grp, main .tags, main .cta, main .acts";
-        var contentItems = document.querySelectorAll(targetSelector);
-        contentItems.forEach(function (el) {
-          if (!el.classList.contains("tags") && !el.classList.contains("svc")) {
+        function mark(list, step) {
+          list.forEach(function (el) {
+            if (el._ri) return;
+            el._ri = step;
             el.classList.add("rise-item");
-          }
-        });
-
-        // Prepare individual service cards in Services section
-        var svcCards = document.querySelectorAll("main .svc > div");
-        svcCards.forEach(function (card) {
-          card.classList.add("rise-item");
-        });
-
-        // Prepare individual tag pills in Brands and Skills sections
-        var tagSpans = document.querySelectorAll("main .tags span");
-        tagSpans.forEach(function (span) {
-          span.classList.add("rise-item");
-        });
-
-        function initContentAnimations() {
-          // Stagger nav links as content area animation triggers
-          navLinks.forEach(function (el, i) {
-            setTimeout(function () {
-              el.classList.add("rise-in");
-            }, i * 65);
           });
-
-          if (!("IntersectionObserver" in window)) {
-            contentItems.forEach(function (el) {
-              el.classList.add("rise-in");
-            });
-            svcCards.forEach(function (card) {
-              card.classList.add("rise-in");
-            });
-            tagSpans.forEach(function (span) {
-              span.classList.add("rise-in");
-            });
-            return;
-          }
-
-          var observer = new IntersectionObserver(
-            function (entries, obs) {
-              var batchIndex = 0;
-              entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                  var el = entry.target;
-                  obs.unobserve(el);
-
-                  var delay = 160 + batchIndex * 65;
-                  batchIndex++;
-
-                  if (el.classList.contains("svc")) {
-                    var cards = el.querySelectorAll(":scope > div");
-                    cards.forEach(function (card, cardIdx) {
-                      setTimeout(
-                        function () {
-                          card.classList.add("rise-in");
-                        },
-                        delay + cardIdx * 60,
-                      );
-                    });
-                  } else if (el.classList.contains("tags")) {
-                    el.classList.add("rise-in");
-                    var tags = el.querySelectorAll("span");
-                    tags.forEach(function (tag, tagIdx) {
-                      tag.classList.add("rise-item");
-                      setTimeout(
-                        function () {
-                          tag.classList.add("rise-in");
-                        },
-                        delay + tagIdx * 45,
-                      );
-                    });
-                  } else {
-                    setTimeout(function () {
-                      el.classList.add("rise-in");
-                    }, delay);
-                  }
-                }
-              });
-            },
-            {
-              threshold: 0,
-              rootMargin: "0px 0px -7% 0px", // 7% above bottom edge
-            },
-          );
-
-          contentItems.forEach(function (el) {
-            observer.observe(el);
-          });
-
-          function updateBottomState() {
-            var scrollPos = window.scrollY + window.innerHeight;
-            var docHeight = document.documentElement.scrollHeight;
-            var distFromBottom = docHeight - scrollPos;
-
-            // Ensure any remaining elements reveal when scrolled near the very bottom
-            if (distFromBottom < 100) {
-              contentItems.forEach(function (el) {
-                if (!el.classList.contains("rise-in")) {
-                  el.classList.add("rise-in");
-                  observer.unobserve(el);
-                }
-              });
-              svcCards.forEach(function (card) {
-                if (!card.classList.contains("rise-in")) {
-                  card.classList.add("rise-in");
-                }
-              });
-              tagSpans.forEach(function (tag) {
-                if (!tag.classList.contains("rise-in")) {
-                  tag.classList.add("rise-in");
-                }
-              });
-            }
-          }
-          window.addEventListener("scroll", updateBottomState, {
-            passive: true,
-          });
-          updateBottomState();
+        }
+        function show(el, delay) {
+          el.style.transitionDelay = delay + "ms";
+          el.classList.add("rise-in");
+          setTimeout(function () {
+            el.style.transitionDelay = "";
+          }, delay + 1100);
         }
 
-        // Animate Name Area at exactly 700ms after load
-        setTimeout(function () {
-          sideElements.forEach(function (el, i) {
-            setTimeout(function () {
-              el.classList.add("rise-in");
-            }, i * 70);
+        /* 1. Name area + nav: fixed sequence after load */
+        var side = $$(
+          ".side .role, .side .promise, .side .side-ctas, .side .side-stats, .side .brands",
+        );
+        var nav = $$("nav a");
+        mark(side, 70);
+        mark(nav, 65);
+        void document.body.offsetWidth;
+        side.forEach(function (el, i) {
+          show(el, 700 + i * 70);
+        });
+        nav.forEach(function (el, i) {
+          show(el, 700 + side.length * 70 + i * 65);
+        });
+
+        /* 2. Content area: individual items */
+        var items = [];
+        function add(sel, step) {
+          var list = $$(sel);
+          mark(list, step);
+          list.forEach(function (el) {
+            if (items.indexOf(el) < 0) items.push(el);
+          });
+        }
+        add(
+          "main .lbl, main .chip, main .big, main .txt, main .cta, main .acts",
+          90,
+        );
+        add("main .stats > div", 80);
+        add("main .svc > div", 60);
+        add("main .row", 90);
+        add("main .cols > div", 70);
+        add("main .grp", 60);
+        add("main .tags span", 45);
+        items.sort(function (x, y) {
+          return x.compareDocumentPosition(y) & 4 ? -1 : 1;
+        });
+
+        function revealBatch(batch) {
+          var acc = 0;
+          batch.forEach(function (el, i) {
+            show(el, Math.min(acc, 1400));
+            acc += el._ri;
+          });
+        }
+
+        var pending = items.slice();
+        function release(batch) {
+          pending = pending.filter(function (el) {
+            return batch.indexOf(el) < 0;
+          });
+        }
+
+        function start() {
+          if (!("IntersectionObserver" in window)) {
+            revealBatch(items);
+            return;
+          }
+          var io = new IntersectionObserver(
+            function (entries) {
+              var batch = entries
+                .filter(function (e) {
+                  return e.isIntersecting;
+                })
+                .map(function (e) {
+                  return e.target;
+                });
+              if (!batch.length) return;
+              batch.sort(function (x, y) {
+                return x.compareDocumentPosition(y) & 4 ? -1 : 1;
+              });
+              batch.forEach(function (el) {
+                io.unobserve(el);
+              });
+              release(batch);
+              revealBatch(batch);
+            },
+            { threshold: 0, rootMargin: "0px 0px -6% 0px" },
+          );
+          items.forEach(function (el) {
+            io.observe(el);
           });
 
-          // Then only start content area animation
-          setTimeout(
+          addEventListener(
+            "scroll",
             function () {
-              initContentAnimations();
+              if (
+                document.documentElement.scrollHeight -
+                  (scrollY + innerHeight) <
+                  100 &&
+                pending.length
+              ) {
+                var rest = pending.slice();
+                rest.forEach(function (el) {
+                  io.unobserve(el);
+                });
+                pending = [];
+                revealBatch(rest);
+              }
             },
-            sideElements.length * 70 + 80,
+            { passive: true },
           );
-        }, 700);
+        }
+        setTimeout(start, 700 + side.length * 70 + nav.length * 65 + 80);
       })();
     </script>
     <script>
@@ -2007,172 +2168,33 @@
       })();
     </script>
     <script>
-      /* 3D Wireframe Perspective Horizon Canvas */
       (function () {
-        var canvas = document.getElementById("horizon-canvas");
-        if (!canvas) return;
-        var ctx = canvas.getContext("2d");
-        if (!ctx) return;
-
-        var W = 0,
-          H = 0;
-        var animId = null;
-        var isVisible = false;
-        var mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
-
-        function resize() {
-          var rect = canvas.getBoundingClientRect();
-          var dpr = Math.min(window.devicePixelRatio || 1, 2);
-          W = rect.width;
-          H = rect.height;
-          canvas.width = W * dpr;
-          canvas.height = H * dpr;
-          ctx.resetTransform();
-          ctx.scale(dpr, dpr);
+        var glow = document.querySelector(".glow"),
+          side = document.querySelector(".side"),
+          busy = false,
+          last = -1;
+        function update() {
+          busy = false;
+          var vh = innerHeight,
+            rem = document.documentElement.scrollHeight - (scrollY + vh),
+            t = Math.min(1, Math.max(0, 1 - rem / (vh * 1.2)));
+          t = Math.round(t * t * (3 - 2 * t) * 200) / 200;
+          if (t === last) return;
+          last = t;
+          var v = t.toFixed(3);
+          glow.style.setProperty("--flow", v);
+          side.style.setProperty("--flow", v);
+          glow.classList.toggle("idle", t === 0);
         }
-
-        window.addEventListener("resize", function () {
-          if (isVisible) resize();
-        });
-
-        window.addEventListener(
-          "mousemove",
-          function (e) {
-            if (!isVisible) return;
-            var rect = canvas.getBoundingClientRect();
-            if (e.clientY >= rect.top - 120 && e.clientY <= rect.bottom + 80) {
-              mouse.targetX = e.clientX - rect.left - W * 0.5;
-              mouse.targetY = e.clientY - rect.top;
-            }
-          },
-          { passive: true },
-        );
-
-        var reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-        // Grid Parameters
-        var cols = 32;
-        var rows = 22;
-        var gridSpacingX = 40;
-        var gridSpacingZ = 30;
-        var fov = 280;
-        var cameraY = -70;
-        var horizonY = 35;
-
-        function getHeight(x, z, time) {
-          var wave1 =
-            Math.sin(x * 0.007 + time * 0.001) *
-            Math.cos(z * 0.008 + time * 0.0014) *
-            16;
-          var wave2 = Math.sin(x * 0.014 - z * 0.01 + time * 0.0018) * 5;
-          var dx = x - mouse.x;
-          var dist = Math.sqrt(dx * dx + z * z);
-          var mouseInfluence =
-            Math.max(0, 1 - dist / 380) * 15 * Math.sin(time * 0.003);
-          return wave1 + wave2 + mouseInfluence;
-        }
-
-        function project(x, y, z) {
-          var scale = fov / (fov + z);
-          return {
-            x: W * 0.5 + x * scale,
-            y: horizonY - (y - cameraY) * scale,
-            depth: z,
-          };
-        }
-
-        function render(time) {
-          if (!isVisible) return;
-          ctx.clearRect(0, 0, W, H);
-
-          mouse.x += (mouse.targetX - mouse.x) * 0.06;
-          mouse.y += (mouse.targetY - mouse.y) * 0.06;
-
-          var speed = 0.03;
-          var zOffset = (time * speed) % gridSpacingZ;
-
-          var grid = [];
-          for (var r = 0; r <= rows; r++) {
-            grid[r] = [];
-            var z = r * gridSpacingZ - zOffset + 24;
-            if (z < 12) continue;
-            for (var c = -cols / 2; c <= cols / 2; c++) {
-              var x = c * gridSpacingX;
-              var y = getHeight(x, z + time * speed, time);
-              grid[r].push(project(x, y, z));
-            }
-          }
-
-          // 1. Draw Latitudinal horizontal scan lines
-          for (var r = 0; r < grid.length; r++) {
-            var rowPts = grid[r];
-            if (!rowPts || rowPts.length < 2) continue;
-            var zRatio = r / rows;
-            var alpha = (1 - zRatio * 0.82) * 0.36;
-            ctx.beginPath();
-            ctx.moveTo(rowPts[0].x, rowPts[0].y);
-            for (var c = 1; c < rowPts.length; c++) {
-              ctx.lineTo(rowPts[c].x, rowPts[c].y);
-            }
-            ctx.strokeStyle = "rgba(254, 59, 21, " + alpha.toFixed(3) + ")";
-            ctx.lineWidth = Math.max(0.6, (1 - zRatio) * 1.3);
-            ctx.stroke();
-          }
-
-          // 2. Draw Longitudinal depth perspective lines
-          var numCols = grid[0] ? grid[0].length : 0;
-          for (var c = 0; c < numCols; c++) {
-            ctx.beginPath();
-            var started = false;
-            for (var r = 0; r < grid.length; r++) {
-              var pt = grid[r] && grid[r][c];
-              if (!pt) continue;
-              if (!started) {
-                ctx.moveTo(pt.x, pt.y);
-                started = true;
-              } else {
-                ctx.lineTo(pt.x, pt.y);
-              }
-            }
-            ctx.strokeStyle = "rgba(254, 59, 21, 0.16)";
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-
-          if (!reduced) {
-            animId = requestAnimationFrame(render);
+        function req() {
+          if (!busy) {
+            busy = true;
+            requestAnimationFrame(update);
           }
         }
-
-        function checkHorizonVisibility() {
-          var scrollBottom = window.scrollY + window.innerHeight;
-          var docHeight = document.documentElement.scrollHeight;
-          var distFromBottom = docHeight - scrollBottom;
-          var shouldShow = distFromBottom < 380;
-
-          if (shouldShow && !isVisible) {
-            isVisible = true;
-            resize();
-            canvas.classList.add("on");
-            if (!reduced && !animId) {
-              animId = requestAnimationFrame(render);
-            } else if (reduced) {
-              render(0);
-            }
-          } else if (!shouldShow && isVisible) {
-            isVisible = false;
-            canvas.classList.remove("on");
-            if (animId) {
-              cancelAnimationFrame(animId);
-              animId = null;
-            }
-          }
-        }
-
-        window.addEventListener("scroll", checkHorizonVisibility, {
-          passive: true,
-        });
-        checkHorizonVisibility();
+        addEventListener("scroll", req, { passive: true });
+        addEventListener("resize", req);
+        update();
       })();
     </script>
   </body>
