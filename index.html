@@ -110,12 +110,54 @@
       }
     </script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- Preload key local fonts to eliminate FOUT / font swapping on initial load -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Instrument+Serif:ital@1&family=DM+Sans:wght@400;500&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="assets/fonts/BigShouldersDisplay-Black.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
+    <link
+      rel="preload"
+      href="assets/fonts/InstrumentSerif-Italic.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="assets/fonts/DMSans-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <style>
+      @font-face {
+        font-family: "Big Shoulders Display";
+        font-style: normal;
+        font-weight: 800 900;
+        font-display: swap;
+        src: url("assets/fonts/BigShouldersDisplay-Black.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 400 500;
+        font-display: swap;
+        src: url("assets/fonts/DMSans-Regular.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url("assets/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+      }
+
       :root {
         --bg: #0b0b0c;
         --panel: #101012;
@@ -182,17 +224,19 @@
           padding-bottom: 2.5rem;
         }
       }
-      nav {
+
+      /* Desktop Nav: In-sidebar navigation */
+      #side-nav {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem 1.5rem;
         font-size: 0.8rem;
         color: var(--mute);
       }
-      nav a {
+      #side-nav a {
         transition: color 0.2s;
       }
-      nav a.rise-item {
+      #side-nav a.rise-item {
         opacity: 0;
         transform: translateY(20px);
         transition:
@@ -201,13 +245,275 @@
           color 0.2s;
         will-change: transform, opacity;
       }
-      nav a.rise-item.rise-in {
+      #side-nav a.rise-item.rise-in {
         opacity: 1;
         transform: translateY(0);
       }
-      nav a:hover {
+      #side-nav a:hover {
         color: var(--ink);
       }
+
+      /* Mobile & Tablet Navigation Header and Drawer: Hidden by default on Desktop */
+      .mobile-header,
+      .mobile-menu-drawer {
+        display: none !important;
+      }
+      /* Shared Hamburger Button & Icon Styling (for Mobile & Tablet) */
+      .menu-btn {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        padding: 0.45rem 0.55rem;
+        color: var(--ink);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.35rem;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition:
+          border-color 0.2s,
+          background 0.2s,
+          transform 0.2s;
+      }
+      .menu-btn:hover,
+      .menu-btn:focus-visible {
+        border-color: rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .menu-btn svg {
+        display: block;
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .menu-btn .icon-close {
+        display: none;
+      }
+      .menu-btn.active .icon-bars {
+        display: none;
+      }
+      .menu-btn.active .icon-close {
+        display: block;
+      }
+
+      @media (max-width: 899px) {
+        #side-nav {
+          display: none !important;
+        }
+        .mobile-header {
+          display: flex !important;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1000;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.65rem clamp(1.25rem, 4vw, 2rem);
+          background: rgba(11, 11, 12, 0.45);
+          backdrop-filter: blur(20px) saturate(160%);
+          -webkit-backdrop-filter: blur(20px) saturate(160%);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          transition: background 0.3s ease;
+        }
+        .mobile-logo-link {
+          display: inline-flex;
+          align-items: center;
+          line-height: 0;
+          padding: 2px;
+          border-radius: 6px;
+          transition:
+            opacity 0.2s,
+            transform 0.2s;
+        }
+        .mobile-logo-link:hover {
+          opacity: 0.85;
+          transform: scale(1.05);
+        }
+        .mobile-logo-img {
+          width: 32px;
+          height: 32px;
+          border-radius: 6px;
+          display: block;
+          object-fit: contain;
+        }
+
+        .mobile-menu-drawer {
+          display: flex !important;
+          position: fixed;
+          top: 50px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(11, 11, 12, 0.65);
+          backdrop-filter: blur(28px) saturate(180%);
+          -webkit-backdrop-filter: blur(28px) saturate(180%);
+          z-index: 999;
+          padding: 2.25rem clamp(1.5rem, 5vw, 2.5rem);
+          transform: translateY(-100%);
+          opacity: 0;
+          pointer-events: none;
+          transition:
+            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          flex-direction: column;
+          gap: 1.25rem;
+          overflow-y: auto;
+          will-change: transform, opacity;
+        }
+        .mobile-menu-drawer.open {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+          transition:
+            transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.5s ease;
+        }
+        .mobile-menu-drawer a {
+          font-family:
+            "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+          font-size: 2rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: var(--mute);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          padding-bottom: 0.75rem;
+          transition:
+            color 0.25s,
+            transform 0.25s;
+        }
+        .mobile-menu-drawer a:hover,
+        .mobile-menu-drawer a:focus {
+          color: var(--ink);
+          transform: translateX(6px);
+        }
+
+        .side {
+          padding-top: 5rem; /* space for fixed mobile header */
+        }
+      }
+
+      /* Tablet View: Constrain navigation header & drawer to only cover the left/name column area */
+      @media (min-width: 900px) and (max-width: 1080px) {
+        #side-nav {
+          display: none !important;
+        }
+        .mobile-header {
+          display: flex !important;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: auto;
+          width: 45.4545%; /* Exactly matches the 5fr side column of the 5fr + 6fr wrap grid */
+          z-index: 1000;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.75rem clamp(1.25rem, 3vw, 2.5rem);
+          background: rgba(11, 11, 12, 0.45);
+          backdrop-filter: blur(20px) saturate(160%);
+          -webkit-backdrop-filter: blur(20px) saturate(160%);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          border-right: 1px solid var(--line);
+        }
+        .mobile-menu-drawer {
+          display: flex !important;
+          position: fixed;
+          top: 50px;
+          left: 0;
+          right: auto;
+          bottom: 0;
+          width: 45.4545%; /* Exactly covers only the name area / side column */
+          background: rgba(11, 11, 12, 0.75);
+          backdrop-filter: blur(28px) saturate(180%);
+          -webkit-backdrop-filter: blur(28px) saturate(180%);
+          border-right: 1px solid var(--line);
+          z-index: 999;
+          padding: 2.25rem clamp(1.25rem, 3vw, 2.5rem);
+          transform: translateY(-100%);
+          opacity: 0;
+          pointer-events: none;
+          transition:
+            transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+          flex-direction: column;
+          gap: 1.25rem;
+          overflow-y: auto;
+          will-change: transform, opacity;
+        }
+        .mobile-menu-drawer.open {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+          transition:
+            transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.5s ease;
+        }
+        .mobile-menu-drawer a {
+          font-family:
+            "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+          font-size: 1.85rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: var(--mute);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          padding-bottom: 0.75rem;
+          transition:
+            color 0.25s,
+            transform 0.25s;
+        }
+        .mobile-menu-drawer a:hover,
+        .mobile-menu-drawer a:focus {
+          color: var(--ink);
+          transform: translateX(6px);
+        }
+        .side {
+          padding-top: 5rem;
+        }
+      }
+
+      /* Desktop View: Ensure only #side-nav displays */
+      @media (min-width: 1081px) {
+        .mobile-header,
+        .mobile-menu-drawer {
+          display: none !important;
+        }
+        #side-nav {
+          display: flex !important;
+        }
+      }
+
+      /* About section quote & description responsive styling: stacked on mobile and tablet up to 1080px */
+      .about-cols {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+      }
+      .about-cols .big {
+        width: 100%;
+        max-width: 60%;
+      }
+      .about-cols .txt {
+        width: 100%;
+        max-width: 40%;
+      }
+      @media (max-width: 1080px) {
+        .about-cols {
+          flex-direction: column !important;
+          gap: 1.25rem;
+        }
+        .about-cols .big,
+        .about-cols .txt {
+          max-width: 100% !important;
+          width: 100% !important;
+        }
+      }
+
       h1 {
         margin: 0;
         font:
@@ -230,14 +536,18 @@
       h1 span b {
         display: block;
         font-weight: 900;
-        animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+        transform: translateY(105%);
+        will-change: transform;
+      }
+      h1.rise-in span b {
+        animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
       }
       @keyframes rise {
         from {
           transform: translateY(105%);
         }
         to {
-          transform: none;
+          transform: translateY(0);
         }
       }
       .role {
@@ -522,15 +832,15 @@
       .rot span {
         display: inline-block;
         transition:
-          transform 0.3s cubic-bezier(0.22, 1.4, 0.36, 1),
-          opacity 0.25s ease-out;
+          transform 0.2s cubic-bezier(0.22, 1.4, 0.36, 1),
+          opacity 0.18s ease-out;
       }
       .rot span.out {
         transform: translateY(-110%) scale(0.92);
         opacity: 0;
         transition:
-          transform 0.2s cubic-bezier(0.55, 0, 1, 0.45),
-          opacity 0.16s ease-in;
+          transform 0.15s cubic-bezier(0.55, 0, 1, 0.45),
+          opacity 0.12s ease-in;
       }
       .rot span.pre {
         transform: translateY(110%) scale(0.92);
@@ -1108,6 +1418,47 @@
       <div class="glow-flow"></div>
       <div class="aur aur-a"></div>
     </div>
+    <!-- Mobile Header & Navigation Drawer -->
+    <header class="mobile-header">
+      <a href="#" class="mobile-logo-link" aria-label="Home">
+        <img
+          src="assets/favicon/android-chrome-512x512.png"
+          alt="Karthik Narayanan Logo"
+          class="mobile-logo-img"
+          width="32"
+          height="32"
+        />
+      </a>
+      <button
+        class="menu-btn"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <svg class="icon-bars" viewBox="0 0 24 24">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        <svg class="icon-close" viewBox="0 0 24 24">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </header>
+    <nav
+      class="mobile-menu-drawer"
+      id="mobileDrawer"
+      aria-label="Mobile Navigation"
+    >
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#experience">Experience</a>
+      <a href="#awards">Awards</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <div class="wrap">
       <aside class="side">
         <svg
@@ -1134,7 +1485,7 @@
           <a href="#contact">Contact</a>
         </nav>
         <div id="side-content">
-          <h1 aria-label="Karthik Narayanan">
+          <h1 id="hero-title" aria-label="Karthik Narayanan">
             <span><b>Karthik</b></span
             ><span><b style="animation-delay: 0.12s">Narayanan</b></span>
           </h1>
@@ -1171,11 +1522,11 @@
         <section id="about">
           <p class="lbl">About</p>
           <p class="chip">Visual designer by heart.</p>
-          <div style="display: flex; flex-direction: row; gap: 1.5rem">
-            <p class="big" style="width: 100%; max-width: 60%">
+          <div class="about-cols">
+            <p class="big">
               "I make products people understand at a glance and enjoy using."
             </p>
-            <p class="txt" style="width: 100%; max-width: 40%">
+            <p class="txt">
               UI/UX designer and 3D artist with 7+ years of experience in
               product design, animation, web development, and immersive
               technologies. As Creative Officer at Zilicon Technologies and
@@ -1565,6 +1916,16 @@
             "Studio",
             "Course",
             "Future",
+            "Vision",
+            "World",
+            "App",
+            "Platform",
+            "Experience",
+            "Prototype",
+            "Ecosystem",
+            "Identity",
+            "Community",
+            "Legacy",
           ],
           i = 0,
           el = document.getElementById("rw");
@@ -1578,8 +1939,8 @@
             el.className = "pre";
             void el.offsetWidth;
             el.className = "";
-          }, 200);
-        }, 1050);
+          }, 150);
+        }, 800);
       })();
     </script>
     <script>
@@ -1994,12 +2355,139 @@
       })();
     </script>
     <script>
-      /* Staggered rise-up: name area on load, then every item as it scrolls into view */
+      /* Mobile & Tablet Hamburger Menu Toggle & Drawer Interaction */
       (function () {
-        if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var menuBtn = document.getElementById("menuToggle");
+        var drawer = document.getElementById("mobileDrawer");
+        if (!menuBtn || !drawer) return;
+
+        var scrollRafId = null;
+
+        function cancelScrollAnim() {
+          if (scrollRafId) {
+            cancelAnimationFrame(scrollRafId);
+            scrollRafId = null;
+          }
+        }
+
+        function toggleMenu() {
+          var isOpen = drawer.classList.toggle("open");
+          menuBtn.classList.toggle("active", isOpen);
+          menuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          if (isOpen) {
+            document.body.style.overflow = "hidden";
+          } else {
+            document.body.style.overflow = "";
+          }
+        }
+
+        function closeMenu() {
+          drawer.classList.remove("open");
+          menuBtn.classList.remove("active");
+          menuBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        }
+
+        menuBtn.addEventListener("click", toggleMenu);
+
+        // Apple-style quartic ease-out: smooth initial momentum and a luxurious silky deceleration that lands softly at 800ms
+        function easeOutQuart(t) {
+          return 1 - Math.pow(1 - t, 4);
+        }
+
+        function smoothScrollTo(targetY, duration) {
+          cancelScrollAnim();
+          var startY = window.scrollY || window.pageYOffset;
+          var distance = targetY - startY;
+          if (Math.abs(distance) < 8) return; // Already at the section, no scroll required
+
+          var startTime = null;
+
+          function step(currentTime) {
+            if (!startTime) startTime = currentTime;
+            var elapsed = currentTime - startTime;
+            var progress = Math.min(1, elapsed / duration);
+            var eased = easeOutQuart(progress);
+
+            window.scrollTo(0, startY + distance * eased);
+
+            if (progress < 1) {
+              scrollRafId = requestAnimationFrame(step);
+            } else {
+              scrollRafId = null;
+            }
+          }
+
+          scrollRafId = requestAnimationFrame(step);
+        }
+
+        window.addEventListener("wheel", cancelScrollAnim, { passive: true });
+        window.addEventListener("touchstart", cancelScrollAnim, {
+          passive: true,
+        });
+
+        drawer.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            var href = link.getAttribute("href");
+            if (!href || !href.startsWith("#")) {
+              closeMenu();
+              return;
+            }
+
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+
+            var target = document.querySelector(href);
+            closeMenu();
+
+            if (target) {
+              if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                target.scrollIntoView({ block: "start" });
+              } else {
+                var smt =
+                  parseFloat(window.getComputedStyle(target).scrollMarginTop) ||
+                  0;
+                var rect = target.getBoundingClientRect();
+                var targetY = Math.max(
+                  0,
+                  (window.scrollY || window.pageYOffset) + rect.top - smt,
+                );
+
+                // Run synchronized across the total 800ms drawer closure animation
+                smoothScrollTo(targetY, 800);
+              }
+              try {
+                history.pushState(null, null, href);
+              } catch (_) {}
+            }
+          });
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && drawer.classList.contains("open")) {
+            closeMenu();
+          }
+        });
+      })();
+    </script>
+    <script>
+      /* Staggered rise-up:
+         - After 300ms: Name rises first
+         - Then side bottom parts (role, promise, ctas, stats, brands)
+         - Then desktop nav links and main initial content area together
+         - When scrolled into view: rest of elements via IntersectionObserver
+      */
+      (function () {
+        var heroTitle = document.getElementById("hero-title");
         var $$ = function (sel) {
           return Array.prototype.slice.call(document.querySelectorAll(sel));
         };
+
+        if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          if (heroTitle) heroTitle.classList.add("rise-in");
+          return;
+        }
 
         function mark(list, step) {
           list.forEach(function (el) {
@@ -2008,6 +2496,7 @@
             el.classList.add("rise-item");
           });
         }
+
         function show(el, delay) {
           el.style.transitionDelay = delay + "ms";
           el.classList.add("rise-in");
@@ -2016,22 +2505,16 @@
           }, delay + 1100);
         }
 
-        /* 1. Name area + nav: fixed sequence after load */
+        /* 1. Elements preparation */
         var side = $$(
           ".side .role, .side .promise, .side .side-ctas, .side .side-stats, .side .brands",
         );
-        var nav = $$("nav a");
-        mark(side, 70);
-        mark(nav, 65);
-        void document.body.offsetWidth;
-        side.forEach(function (el, i) {
-          show(el, 700 + i * 70);
-        });
-        nav.forEach(function (el, i) {
-          show(el, 700 + side.length * 70 + i * 65);
-        });
+        var nav = $$("#side-nav a");
 
-        /* 2. Content area: individual items */
+        mark(side, 60);
+        mark(nav, 45);
+
+        /* Content area items */
         var items = [];
         function add(sel, step) {
           var list = $$(sel);
@@ -2042,21 +2525,21 @@
         }
         add(
           "main .lbl, main .chip, main .big, main .txt, main .cta, main .acts",
-          90,
+          80,
         );
-        add("main .stats > div", 80);
+        add("main .stats > div", 70);
         add("main .svc > div", 60);
-        add("main .row", 90);
-        add("main .cols > div", 70);
+        add("main .row", 80);
+        add("main .cols > div", 65);
         add("main .grp", 60);
-        add("main .tags span", 45);
+        add("main .tags span", 40);
         items.sort(function (x, y) {
           return x.compareDocumentPosition(y) & 4 ? -1 : 1;
         });
 
         function revealBatch(batch) {
           var acc = 0;
-          batch.forEach(function (el, i) {
+          batch.forEach(function (el) {
             show(el, Math.min(acc, 1400));
             acc += el._ri;
           });
@@ -2069,9 +2552,10 @@
           });
         }
 
-        function start() {
+        function startIntersectionObserver() {
           if (!("IntersectionObserver" in window)) {
-            revealBatch(items);
+            revealBatch(pending);
+            pending = [];
             return;
           }
           var io = new IntersectionObserver(
@@ -2095,7 +2579,7 @@
             },
             { threshold: 0, rootMargin: "0px 0px -6% 0px" },
           );
-          items.forEach(function (el) {
+          pending.forEach(function (el) {
             io.observe(el);
           });
 
@@ -2119,7 +2603,47 @@
             { passive: true },
           );
         }
-        setTimeout(start, 700 + side.length * 70 + nav.length * 65 + 80);
+
+        /* 2. Coordinated Choreography:
+           - T = 300ms: Hero Name rises first
+           - T = 550ms: Side bottom parts stagger in
+           - T = 900ms: Nav links and top visible main content items reveal together
+           - After initial reveal: Observe remainder as user scrolls
+        */
+        setTimeout(function () {
+          // A. Trigger Name animation
+          if (heroTitle) {
+            heroTitle.classList.add("rise-in");
+          }
+
+          // B. Trigger bottom parts shortly after name starts rising
+          side.forEach(function (el, i) {
+            show(el, 250 + i * 65);
+          });
+
+          // C. Trigger nav links and initially visible content area together
+          var navDelayStart = 600;
+          nav.forEach(function (el, i) {
+            show(el, navDelayStart + i * 45);
+          });
+
+          // Grab initial items currently in/near the viewport to rise together with nav
+          var vh = window.innerHeight || 800;
+          var initialVisible = pending.filter(function (el) {
+            var rect = el.getBoundingClientRect();
+            return rect.top < vh * 0.95 && rect.bottom > 0;
+          });
+
+          if (initialVisible.length > 0) {
+            release(initialVisible);
+            initialVisible.forEach(function (el, i) {
+              show(el, navDelayStart + i * 60);
+            });
+          }
+
+          // Observe the rest on scroll
+          startIntersectionObserver();
+        }, 300);
       })();
     </script>
     <script>
@@ -2196,33 +2720,35 @@
           { passive: true },
         );
 
-        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-          link.addEventListener("click", function (e) {
-            var href = link.getAttribute("href");
-            if (!href || href === "#") return;
-            var target = document.querySelector(href);
-            if (target) {
-              e.preventDefault();
-              var rect = target.getBoundingClientRect();
-              var smt =
-                parseFloat(window.getComputedStyle(target).scrollMarginTop) ||
-                0;
-              targetY = clamp(
-                window.scrollY + rect.top - smt,
-                0,
-                getMaxScroll(),
-              );
-              if (!isRunning) {
-                isRunning = true;
-                currentY = window.scrollY;
-                requestAnimationFrame(update);
+        document
+          .querySelectorAll('a[href^="#"]:not(#mobileDrawer a)')
+          .forEach(function (link) {
+            link.addEventListener("click", function (e) {
+              var href = link.getAttribute("href");
+              if (!href || href === "#") return;
+              var target = document.querySelector(href);
+              if (target) {
+                e.preventDefault();
+                var rect = target.getBoundingClientRect();
+                var smt =
+                  parseFloat(window.getComputedStyle(target).scrollMarginTop) ||
+                  0;
+                targetY = clamp(
+                  window.scrollY + rect.top - smt,
+                  0,
+                  getMaxScroll(),
+                );
+                if (!isRunning) {
+                  isRunning = true;
+                  currentY = window.scrollY;
+                  requestAnimationFrame(update);
+                }
+                try {
+                  history.pushState(null, null, href);
+                } catch (_) {}
               }
-              try {
-                history.pushState(null, null, href);
-              } catch (_) {}
-            }
+            });
           });
-        });
       })();
     </script>
     <script>
