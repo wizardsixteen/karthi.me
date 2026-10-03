@@ -1,0 +1,81 @@
+/* ==========================================================================
+   Typography & Local Font Declarations
+   ========================================================================== */
+
+@font-face {
+        font-family: "Big Shoulders Display";
+        font-style: normal;
+        font-weight: 800 900;
+        font-display: swap;
+        src: url("../fonts/BigShouldersDisplay-Black.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "DM Sans";
+        font-style: normal;
+        font-weight: 400 500;
+        font-display: swap;
+        src: url("../fonts/DMSans-Regular.woff2") format("woff2");
+      }
+
+      @font-face {
+        font-family: "Instrument Serif";
+        font-style: italic;
+        font-weight: 400;
+        font-display: swap;
+        src: url("../fonts/InstrumentSerif-Italic.woff2") format("woff2");
+      }
+
+h1 {
+        margin: 0;
+        font:
+          900 clamp(4rem, 19vw, 9rem)/0.82 "Big Shoulders Display",
+          "Arial Narrow",
+          Impact,
+          sans-serif;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+      }
+      h1 span {
+        display: block;
+        overflow: hidden;
+      }
+      @media (min-width: 900px) {
+        h1 {
+          font-size: clamp(3.5rem, 8.5vw, 8rem);
+        }
+      }
+      h1 span b {
+        display: block;
+        font-weight: 900;
+        transform: translateY(105%);
+        will-change: transform;
+      }
+      h1.rise-in span b {
+        animation: rise 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+      @keyframes rise {
+        from {
+          transform: translateY(105%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+      .role {
+        font:
+          italic 1.5rem/1.25 "Instrument Serif",
+          Georgia,
+          serif;
+        font-style: italic;
+        margin: 1.25rem 0 0;
+        color: var(--mute);
+      }
+      .meta {
+        font-size: 0.8rem;
+        color: var(--mute);
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }

@@ -1,0 +1,15 @@
+/* ==========================================================================
+   Design Tokens & CSS Custom Properties
+   ========================================================================== */
+
+:root {
+        --bg: #0b0b0c;
+        --panel: #101012;
+        --ink: #f2f2f2;
+        --mute: #b5b5b5;
+        --line: #26262a;
+        --accent: #fe3b15;
+        box-sizing: border-box;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
