@@ -18,17 +18,16 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
-      "@karthi": ["src/elements/index.ts"],
-      "@karthi/ui": ["src/elements/ui/index.ts"],
-      "@karthi/data": ["src/elements/data/index.ts"],
-      "@karthi/hooks": ["src/elements/hooks/index.ts"],
-      "@karthi/types": ["src/elements/types/index.ts"],
-      "@karthi/styles": ["src/elements/styles/index.css"],
-      "@karthi/styles/*": ["src/elements/styles/*"],
-      "@karthi/*": ["src/elements/*"],
-      "@karthi/public/*": ["public/*"]
+      "@karthi": ["./src/elements/index.ts"],
+      "@karthi/ui": ["./src/elements/ui/index.ts"],
+      "@karthi/data": ["./src/elements/data/index.ts"],
+      "@karthi/hooks": ["./src/elements/hooks/index.ts"],
+      "@karthi/types": ["./src/elements/types/index.ts"],
+      "@karthi/styles": ["./src/elements/styles/index.css"],
+      "@karthi/styles/*": ["./src/elements/styles/*"],
+      "@karthi/*": ["./src/elements/*"],
+      "@karthi/public/*": ["./public/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
