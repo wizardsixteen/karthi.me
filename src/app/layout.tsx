@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { AmbientGlow, CustomCursor, RevealObserver } from "@karthi/ui";
+import { ViewTransitionProvider } from "@karthi/providers";
 import "@karthi/styles";
 
 const bigShoulders = localFont({
@@ -144,7 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AmbientGlow />
         <CustomCursor />
         <RevealObserver />
-        {children}
+        <ViewTransitionProvider>{children}</ViewTransitionProvider>
       </body>
     </html>
   );

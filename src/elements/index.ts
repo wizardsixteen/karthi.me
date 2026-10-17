@@ -4,4 +4,5 @@
 export * from "./ui";
 export * from "./data";
 export * from "./hooks";
+export * from "./providers";
 export * from "./types";

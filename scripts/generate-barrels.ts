@@ -53,17 +53,20 @@ function main() {
   // 3. Hooks modules
   generateBarrelForFolder(path.join(elementsDir, "hooks"));
 
-  // 4. UI sub-barrels
+  // 4. Providers modules
+  generateBarrelForFolder(path.join(elementsDir, "providers"));
+
+  // 5. UI sub-barrels
   generateBarrelForFolder(path.join(elementsDir, "ui", "layouts"));
   generateBarrelForFolder(path.join(elementsDir, "ui", "components"));
   generateBarrelForFolder(path.join(elementsDir, "ui", "animations"));
   generateBarrelForFolder(path.join(elementsDir, "ui", "pages", "home", "sections"));
 
-  // 5. UI Master Barrel
+  // 6. UI Master Barrel
   const uiSubdirs = ["layouts", "components", "animations", "pages/home/sections"];
   generateBarrelForFolder(path.join(elementsDir, "ui"), uiSubdirs);
 
-  // 6. Elements Master Barrel (src/elements/index.ts)
+  // 7. Elements Master Barrel (src/elements/index.ts)
   const masterContent = [
     `// Auto-generated master workspace barrel`,
     `// import {} from "@karthi" // @karthi will be the workspace name.`,
@@ -71,6 +74,7 @@ function main() {
     `export * from "./ui";`,
     `export * from "./data";`,
     `export * from "./hooks";`,
+    `export * from "./providers";`,
     `export * from "./types";`,
     ``,
   ].join("\n");

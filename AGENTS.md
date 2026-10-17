@@ -26,6 +26,9 @@ import { servicesData, experienceData, navItems } from "@karthi/data";
 // Hooks Modules
 import { useSmoothScroll, useCursorPhysics } from "@karthi/hooks";
 
+// Providers Modules
+import { ViewTransitionProvider } from "@karthi/providers";
+
 // TypeScript Types
 import type { ServiceItem, TimelineItem } from "@karthi/types";
 
@@ -47,7 +50,8 @@ import "@karthi/styles";
   - `src/elements/ui/components/`
   - `src/elements/ui/animations/`
   - `src/elements/ui/pages/*/sections/`
-  - and updates the unified `src/elements/ui/index.ts`, `src/elements/data/index.ts`, `src/elements/hooks/index.ts`, `src/elements/types/index.ts`, and `src/elements/index.ts`.
+  - `src/elements/providers/`
+  - and updates the unified `src/elements/ui/index.ts`, `src/elements/providers/index.ts`, `src/elements/data/index.ts`, `src/elements/hooks/index.ts`, `src/elements/types/index.ts`, and `src/elements/index.ts`.
 - The barrel generator is also wired into the `prebuild` npm hook so Vercel builds always have up-to-date barrels.
 
 ---
@@ -59,6 +63,7 @@ src/
 ├── app/                  # Next.js App Router (pages, layout, fonts, sitemap, robots)
 └── elements/             # Consolidated Architecture Hub
     ├── styles/           # CSS modules & tokens (imported via @karthi/styles)
+    ├── providers/        # Context & runtime interceptor providers (e.g. ViewTransitionProvider)
     ├── ui/               # All presentational UI modules
     │   ├── layouts/      # AppShell, MobileHeader, MobileDrawer, SideNav, SideProfile
     │   ├── pages/        # Page-scoped modules (e.g. pages/home/sections/)
