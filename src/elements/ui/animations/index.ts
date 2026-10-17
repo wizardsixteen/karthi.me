@@ -1,0 +1,5 @@
+// Auto-generated barrel file
+// import {} from "@karthi" // @karthi will be the workspace name.
+
+export * from "./PolyhedronCanvas";
+export * from "./RevealObserver";
