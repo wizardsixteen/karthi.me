@@ -1,0 +1,23 @@
+// import {} from "@karthi" // @karthi will be the workspace name.
+export const rotatorWords: string[] = [
+  "Brand",
+  "Shop",
+  "Dream",
+  "Product",
+  "Story",
+  "Startup",
+  "Idea",
+  "Studio",
+  "Course",
+  "Future",
+  "Vision",
+  "World",
+  "App",
+  "Platform",
+  "Experience",
+  "Prototype",
+  "Ecosystem",
+  "Identity",
+  "Community",
+  "Legacy",
+];

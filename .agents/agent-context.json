@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "project": "karthi.me",
+  "framework": "Next.js @latest",
+  "router": "App Router",
+  "language": "TypeScript",
+  "workspaceAlias": "@karthi",
+  "barrelStandard": {
+    "ui": "@karthi/ui",
+    "data": "@karthi/data",
+    "hooks": "@karthi/hooks",
+    "types": "@karthi/types"
+  },
+  "requiredComment": "// import {} from \"@karthi\" // @karthi will be the workspace name.",
+  "scripts": {
+    "generateBarrels": "tsx scripts/generate-barrels.ts",
+    "build": "next build"
+  }
+}

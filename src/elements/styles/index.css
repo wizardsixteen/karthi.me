@@ -1,0 +1,34 @@
+/* ==========================================================================
+   Master CSS Entry — @karthi/styles with Tailwind CSS v4
+   ========================================================================== */
+
+@import "tailwindcss";
+
+@theme {
+  /* Spacing Scale: 1px reference (eliminates all -[..px] arbitrary classes) */
+  --spacing: 1px;
+
+  /* Color Design Tokens */
+  --color-bg: #0b0b0c;
+  --color-panel: #101012;
+  --color-ink: #f2f2f2;
+  --color-mute: #b5b5b5;
+  --color-line: #26262a;
+  --color-accent: #fe3b15;
+
+  /* Font Families */
+  --font-display: "Big Shoulders Display", var(--font-big-shoulders), "Arial Narrow", Impact, sans-serif;
+  --font-sans: "DM Sans", var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  --font-serif: "Instrument Serif", var(--font-instrument-serif), Georgia, serif;
+
+  /* Breakpoints */
+  --breakpoint-sm: 700px;
+  --breakpoint-md: 900px;
+  --breakpoint-lg: 1081px;
+}
+
+@import "./variables.css";
+@import "./typography.css";
+@import "./layout.css";
+@import "./components.css";
+@import "./animation.css";
