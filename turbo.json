@@ -1,7 +1,7 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "tasks": {
-    "build": {
+    "next:build": {
       "dependsOn": ["barrels"],
       "outputs": [".next/**", "!.next/cache/**"]
     },
@@ -11,10 +11,10 @@
         "src/index.ts"
       ]
     },
-    "lint": {},
-    "dev": {
+    "next:dev": {
       "cache": false,
       "persistent": true
-    }
+    },
+    "lint": {}
   }
 }

@@ -4,14 +4,14 @@
   "private": true,
   "packageManager": "pnpm@12.11.2",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "turbo run next:dev",
+    "build": "turbo run next:build",
+    "next:dev": "next dev",
+    "next:build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "turbo run lint",
     "barrels": "tsx scripts/generate-barrels.ts",
-    "turbo:build": "turbo run build",
-    "turbo:dev": "turbo run dev",
-    "clean": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\""
+    "clean": "turbo clean && node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\""
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",
