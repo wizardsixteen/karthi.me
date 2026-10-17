@@ -34,3 +34,6 @@ Thumbs.db
 
 # TypeScript declaration cache
 next-env.d.ts
+
+# Turborepo
+.turbo
