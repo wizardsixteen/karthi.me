@@ -52,7 +52,7 @@ const instrumentSerif = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://karthi-me.vercel.app/"),
+  metadataBase: new URL("https://karthi.me/"),
   title: "Karthik Narayanan — UI/UX, 3D, Code & XR.",
   description:
     "Portfolio of Karthik Narayanan — Creative Officer, UI/UX Designer & 3D Artist with 7+ years creating intuitive products and immersive 3D/XR experiences.",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   manifest: "/favicon/site.webmanifest",
   openGraph: {
     type: "website",
-    url: "https://karthi-me.vercel.app/",
+    url: "https://karthi.me/",
     title: "Karthik Narayanan — UI/UX, 3D, Code & XR.",
     description:
       "Creative Officer specializing in UI/UX design, 3D modeling, web and XR. From code to pixels to polygons to 3D worlds.",
@@ -113,7 +113,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Karthik Narayanan",
-  url: "https://karthi-me.vercel.app/",
+  url: "https://karthi.me/",
   jobTitle: "Creative Officer",
   sameAs: ["https://www.linkedin.com/in/wizardsixteen", "https://riglabs.co", "https://wa.me/917306728337"],
   knowsAbout: [
